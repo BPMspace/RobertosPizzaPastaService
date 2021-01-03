@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ServiceDeskMail:
+        container_name: ServiceDeskMail
+        image: mailhog/mailhog
+        restart: always
+        ports:
+            - 4025:8025
+  KitchenMail:
+        container_name: KitchenMail
+        image: mailhog/mailhog
+        restart: always
+        ports:
+            - 4026:8025
+  DriverMail:
+        container_name: DriverMail
+        image: mailhog/mailhog
+        restart: always
+        ports:
+            - 4027:8025
+  RobertoWeb:
+       container_name: RobertoWeb
+       image: php:7.4-apache
+       ports:
+            - 4080:80
+       volumes:
+         - './webroot/:/var/www/html/'
