@@ -1,27 +1,27 @@
 version: '3'
 services:
   ServiceDeskMail:
-        container_name: ServiceDeskMail
+        container_name: ServiceDeskMail$Number_Pizza_Team
         image: mailhog/mailhog
         restart: always
         ports:
-            - 4025:8025
+            - 4{$Number_Pizza_Team}25:8025
   KitchenMail:
-        container_name: KitchenMail
+        container_name: KitchenMail$Number_Pizza_Team
         image: mailhog/mailhog
         restart: always
         ports:
-            - 4026:8025
+            - 4{$Number_Pizza_Team}26:8025
   DriverMail:
-        container_name: DriverMail
+        container_name: DriverMail$Number_Pizza_Team
         image: mailhog/mailhog
         restart: always
         ports:
-            - 4027:8025
+            - 4{$Number_Pizza_Team}27:8025
   RobertoWeb:
-       container_name: RobertoWeb
+       container_name: RobertoWeb$Number_Pizza_Team
        image: php:7.4-apache
        ports:
-            - 4080:80
+            - 4{$Number_Pizza_Team}80:80
        volumes:
          - './webroot/:/var/www/html/'
