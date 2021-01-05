@@ -15,6 +15,7 @@
       <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+      <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
       <link rel="stylesheet" href="css/animate.css">
       <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -24,7 +25,7 @@
       <link rel="stylesheet" href="css/ionicons.min.css">
       <link rel="stylesheet" href="css/bootstrap-datepicker.css">
       <link rel="stylesheet" href="css/jquery.timepicker.css">
-      <link rel="stylesheet" href="css/flaticon.css">
+      <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
       <link rel="stylesheet" href="css/icomoon.css">
       <link rel="stylesheet" href="css/style.css">
    </head>
@@ -117,10 +118,10 @@
                <div class="col-md-4 ftco-animate">
                   <div class="media d-block text-center block-6 services">
                      <div class="icon d-flex justify-content-center align-items-center mb-5">
-                        <span class="flaticon-diet"></span>
+                        <span class="flaticon-oven-1"></span>
                      </div>
                      <div class="media-body">
-                        <h3 class="heading">Healthy Foods</h3>
+                        <h3 class="heading">stone oven </h3>
                         <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
                      </div>
                   </div>
@@ -128,7 +129,7 @@
                <div class="col-md-4 ftco-animate">
                   <div class="media d-block text-center block-6 services">
                      <div class="icon d-flex justify-content-center align-items-center mb-5">
-                        <span class="flaticon-bicycle"></span>
+                        <span class="flaticon-vespa"></span>
                      </div>
                      <div class="media-body">
                         <h3 class="heading">Fastest Delivery</h3>
@@ -138,7 +139,7 @@
                </div>
                <div class="col-md-4 ftco-animate">
                   <div class="media d-block text-center block-6 services">
-                     <div class="icon d-flex justify-content-center align-items-center mb-5"><span class="flaticon-pizza-1"></span></div>
+                     <div class="icon d-flex justify-content-center align-items-center mb-5"><span class="flaticon-recipe-book"></span></div>
                      <div class="media-body">
                         <h3 class="heading">Original Recipes</h3>
                         <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
@@ -154,7 +155,9 @@
                <div class="col-md-7 heading-section text-center ftco-animate">
                   <h2 class="mb-4">Our Menu Pricing</h2>
                   <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-                  <div class="top-buffer_60"><h2 class="mb-4"><br/>Pizza</h2></div>
+                  <div class="top-buffer_60">
+                     <h2 class="mb-4"><br/>Pizza</h2>
+                  </div>
                </div>
             </div>
             <div class="row">
@@ -305,97 +308,156 @@
                         </div>
                      </div>
                   </div>
-				</div>
-			</div>
+               </div>
+            </div>
             <div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
                <div class="col-md-7 heading-section text-center ftco-animate">
                   <p class="flip top-buffer_30"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-                  <h2 class="mb-4 top-buffer_30"><br/>Pasta</h2>
-			   </div>
-			   <div class="row">
-               <div class="col-md-6">
-                  <div class="pricing-entry d-flex ftco-animate">
-                     <div class="img" style="background-image: url(images/pasta-5.jpg);"></div>
-                     <div class="desc pl-3">
-                        <div class="d-flex text align-items-center">
-                           <h3><span>Pasta Aglio & Olio</span></h3>
-                           <span class="price">€6.99</span>
+                  <h2 class="mb-4 top-buffer_30"><br/>Extra</h2>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/mozarella.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Mozzarella </span></h3>
+                              <span class="price">€0.49</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
                         </div>
-                        <div class="d-block">
-                           <p>A small river named Duden flows by their place and supplies</p>
+                     </div>
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/peperoni.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Peperoni</span></h3>
+                              <span class="price">€0.29</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
                         </div>
                      </div>
                   </div>
-                  <div class="pricing-entry d-flex ftco-animate">
-                     <div class="img" style="background-image: url(images/pasta-3.jpg);"></div>
-                     <div class="desc pl-3">
-                        <div class="d-flex text align-items-center">
-                           <h3><span>Pasta Tonno</span></h3>
-                           <span class="price">€7.99</span>
+                  <div class="col-md-6">
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/ananas.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Ananas</span></h3>
+                              <span class="price">€0.19</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
                         </div>
-                        <div class="d-block">
-                           <p>A small river named Duden flows by their place and supplies</p>
+                     </div>
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/knoblauch.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Aglio</span></h3>
+                              <span class="price">€0.09</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-md-6">
-                  <div class="pricing-entry d-flex ftco-animate">
-                     <div class="img" style="background-image: url(images/pasta-6.jpg);"></div>
-                     <div class="desc pl-3">
-                        <div class="d-flex text align-items-center">
-                           <h3><span>Pasta Funghi</span></h3>
-                           <span class="price">€8.99</span>
-                        </div>
-                        <div class="d-block">
-                           <p>A small river named Duden flows by their place and supplies</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="pricing-entry d-flex ftco-animate">
-                     <div class="img" style="background-image: url(images/pasta-4.jpg);"></div>
-                     <div class="desc pl-3">
-                        <div class="d-flex text align-items-center">
-                           <h3><span>Pasta Pesto</span></h3>
-                           <span class="price">€5.99</span>
-                        </div>
-                        <div class="d-block">
-                           <p>A small river named Duden flows by their place and supplies</p>
-                        </div>
-                     </div>
-                  </div>
-				</div>
-			</div>
             </div>
-
-		</div>
+            <div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+               <div class="col-md-7 heading-section text-center ftco-animate">
+                  <p class="flip top-buffer_30"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+                  <h2 class="mb-4 top-buffer_30"><br/>Pasta</h2>
+               </div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/pasta-5.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Pasta Aglio & Olio</span></h3>
+                              <span class="price">€6.99</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/pasta-3.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Pasta Tonno</span></h3>
+                              <span class="price">€7.99</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/pasta-6.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Pasta Funghi</span></h3>
+                              <span class="price">€8.99</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="pricing-entry d-flex ftco-animate">
+                        <div class="img" style="background-image: url(images/pasta-4.jpg);"></div>
+                        <div class="desc pl-3">
+                           <div class="d-flex text align-items-center">
+                              <h3><span>Pasta Pesto</span></h3>
+                              <span class="price">€5.99</span>
+                           </div>
+                           <div class="d-block">
+                              <p>A small river named Duden flows by their place and supplies</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </section>
       <section class="ftco-gallery">
          <div class="container-wrap">
             <div class="row no-gutters">
                <div class="col-md-3 ftco-animate">
-                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
+                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/pizza_neaple_1.png);">
                      <div class="icon mb-4 d-flex align-items-center justify-content-center">
                         <span class="icon-search"></span>
                      </div>
                   </a>
                </div>
                <div class="col-md-3 ftco-animate">
-                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
+                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/pizza_neaple_2.png);">
                      <div class="icon mb-4 d-flex align-items-center justify-content-center">
                         <span class="icon-search"></span>
                      </div>
                   </a>
                </div>
                <div class="col-md-3 ftco-animate">
-                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
+                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/pizza_neaple_3.png);">
                      <div class="icon mb-4 d-flex align-items-center justify-content-center">
                         <span class="icon-search"></span>
                      </div>
                   </a>
                </div>
                <div class="col-md-3 ftco-animate">
-                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
+                  <a href="#" class="gallery img d-flex align-items-center" style="background-image: url(images/pizza_neaple_4.png);">
                      <div class="icon mb-4 d-flex align-items-center justify-content-center">
                         <span class="icon-search"></span>
                      </div>
@@ -413,7 +475,7 @@
                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                            <div class="text">
-                              <div class="icon"><span class="flaticon-pizza-1"></span></div>
+                              <div class="icon"><span class="flaticon-pizza-slice"></span></div>
                               <strong class="number" data-number="98736">0</strong>
                               <span>Pizza Branches per Year</span>
                            </div>
@@ -422,16 +484,16 @@
                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                            <div class="text">
-                              <div class="icon"><span class="flaticon-medal"></span></div>
-                              <strong class="number" data-number="109">0</strong>
-                              <span>Number of Awards</span>
+                              <div class="icon"><span class="flaticon-thermometer"></span></div>
+                              <strong class="number" data-number="32">0</strong><strong>°</strong>
+                              <span><span>Temperature</span></span>
                            </div>
                         </div>
                      </div>
                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                            <div class="text">
-                              <div class="icon"><span class="flaticon-laugh"></span></div>
+                              <div class="icon"><span class="flaticon-people"></span></div>
                               <strong class="number" data-number="890567">0</strong>
                               <span>Happy Customer since 1982</span>
                            </div>
@@ -440,9 +502,9 @@
                      <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
                         <div class="block-18 text-center">
                            <div class="text">
-                              <div class="icon"><span class="flaticon-chef"></span></div>
-                              <strong class="number" data-number="45">0</strong>
-                              <span>Staff</span>
+                              <div class="icon"><span class="flaticon-humidity-1"></span></div>
+                              <strong class="number" data-number="90">0</strong> <strong>%</strong>
+                              <span>Humidity</span>
                            </div>
                         </div>
                      </div>
@@ -456,26 +518,23 @@
          <div class="container-wrap">
             <div class="row no-gutters d-md-flex align-items-center">
                <div class="col-md-6 d-flex align-self-stretch">
-                  <div></div>
+                  <div>><img class="img-responsive" src="./images/RPPS_MAP.png" alt="Pizza Simulation"></div>
                </div>
                <div class="col-md-6 appointment ftco-animate">
-                  <h3 class="mb-3">Contact Us</h3>
+                  <h3 class="mb-3">Login to the Simulation</h3>
                   <form action="#" class="appointment-form">
                      <div class="d-md-flex">
                         <div class="form-group">
-                           <input type="text" class="form-control" placeholder="First Name">
+                           <input type="text" class="form-control" placeholder="User ID or E-Mail">
                         </div>
                      </div>
                      <div class="d-me-flex">
                         <div class="form-group">
-                           <input type="text" class="form-control" placeholder="Last Name">
+                           <input type="password" class="form-control" placeholder="Password">
                         </div>
                      </div>
                      <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-                     </div>
-                     <div class="form-group">
-                        <input type="submit" value="Send" class="btn btn-primary py-3 px-4">
+                        <input type="submit" value="Login" class="btn btn-primary py-3 px-4">
                      </div>
                   </form>
                </div>
@@ -486,10 +545,13 @@
          <div class="overlay"></div>
          <div class="container">
             <div class="row mb-5">
-               <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+               <div class="col-lg-9 col-md-9 mb-5 mb-md-5">
                   <div class="ftco-footer-widget mb-4">
-                     <h2 class="ftco-heading-2">About Us</h2>
-                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                     <h2 class="ftco-heading-2">About the mITSM Process Siumulation workshop</h2>
+                     <h3>Understanding processes in everyday work</h3>
+                     <p>Many managers are familiar with this situation: When processes are introduced, there is noticeable uncertainty among the employees involved. They do not recognize the necessity, may not feel properly involved or have concerns about changes in responsibilities and positions. With the help of our process simulation, we can sharpen this process awareness.</p>
+                     <h3>Simulation using the example of a pizza bakery</h3>
+                     <p>In this one-day workshop, you and your team will be intensively trained on the topic of process awareness in an exciting and playful way. Either on your premises or in our modern training rooms. The workshop is also suitable for large events with up to 150 participants and is led by our experienced specialists.</p>
                      <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -499,12 +561,12 @@
                </div>
                <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
                   <div class="ftco-footer-widget mb-4">
-                     <h2 class="ftco-heading-2">Have a Questions?</h2>
+                     <h2 class="ftco-heading-2">More Infomation?</h2>
                      <div class="block-23 mb-3">
                         <ul>
-                           <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                           <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                           <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                           <li><a href="https://www.mitsm.de/schulung/prozess-simulation-pizzaservice/" target="_blank"><i class="fa  fa-info-circle" aria-hidden="true"></i>   Description</a></li>
+                           <li><a href="https://www.mitsm.de/impressum/" target="_blank"><i class="fa   fa-external-link" aria-hidden="true"></i> Impressum</a></li>
+                           <li><a href="mailto:info@mitsm.de"><i class="fa  fa-envelope-o" aria-hidden="true"></i>    info@mitsm.de</a></li>
                         </ul>
                      </div>
                   </div>
@@ -515,7 +577,8 @@
                   <p>
                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                   </p>
                </div>
             </div>

@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -8982,72 +8982,24 @@ textarea.form-control {
   color: #fff;
   background-color: #6610f2;
   border-color: #6610f2; }
-  .btn-info:hover {
-    color: #fff;
-    background-color: #7527f3;
-    border-color: #0a0118; }
-  .btn-info:focus, .btn-info.focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); }
-  .btn-info.disabled, .btn-info:disabled {
-    color: #fff;
-    background-color: #6610f2;
-    border-color: #6610f2; }
-  .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
-  .show > .btn-info.dropdown-toggle {
-    color: #fff;
-    background-color: #0a0118;
-    border-color: #330879; }
-    .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-info.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
-      box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); }
 
 .btn-team2 {
   color: #fff;
   background-color: #28a745;
   border-color: #28a745; }
-  .btn-info:hover {
-    color: #fff;
-    background-color: #52b86a;
-    border-color: #28a745; }
-  .btn-info:focus, .btn-info.focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); }
-  .btn-info.disabled, .btn-info:disabled {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745; }
-  .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
-  .show > .btn-info.dropdown-toggle {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #10421b; }
-    .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-info.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
-      box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); }
-      .btn-team2 {
-        color: #fff;
-        background-color: #28a745;
-        border-color: #28a745; }
-        .btn-info:hover {
-          color: #fff;
-          background-color: #52b86a;
-          border-color: #28a745; }
-        .btn-info:focus, .btn-info.focus {
-          -webkit-box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); }
-        .btn-info.disabled, .btn-info:disabled {
-          color: #fff;
-          background-color: #28a745;
-          border-color: #28a745; }
-        .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
-        .show > .btn-info.dropdown-toggle {
-          color: #fff;
-          background-color: #28a745;
-          border-color: #10421b; }
-          .btn-info:not(:disabled):not(.disabled):active:focus, .btn-info:not(:disabled):not(.disabled).active:focus,
-          .show > .btn-info.dropdown-toggle:focus {
-            -webkit-box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); }
+
+.btn-team3 {
+  color: #fff;
+  background-color: #b976ff;
+  border-color: #b976ff; }
+
+
+.btn-team4 {
+  color: #000;
+  background-color: #b3ec00;
+  border-color: #b3ec00; }
+
+.btn-team5 {
+  color: #000;
+  background-color: #6d0032 ;
+  border-color: #6d0032 ; }

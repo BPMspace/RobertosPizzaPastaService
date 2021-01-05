@@ -1,12 +1,13 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 25/09/2018 08:24
+    Creation date: 05/01/2021 19:58
     */
 
     @font-face {
   font-family: "Flaticon";
   src: url("./Flaticon.eot");
   src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
        url("./Flaticon.woff") format("woff"),
        url("./Flaticon.ttf") format("truetype"),
        url("./Flaticon.svg#Flaticon") format("svg");
@@ -36,18 +37,58 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-pizza-1:before { content: "\f100"; }
-.flaticon-pizza:before { content: "\f101"; }
-.flaticon-bicycle:before { content: "\f102"; }
-.flaticon-diet:before { content: "\f103"; }
-.flaticon-medal:before { content: "\f104"; }
-.flaticon-laugh:before { content: "\f105"; }
-.flaticon-chef:before { content: "\f106"; }
+    .flaticon-thermometer:before { content: "\f100"; }
+.flaticon-chef:before { content: "\f101"; }
+.flaticon-vespa:before { content: "\f102"; }
+.flaticon-pizza-slice:before { content: "\f103"; }
+.flaticon-pizza:before { content: "\f104"; }
+.flaticon-italian-pizza-cut-into-slices:before { content: "\f105"; }
+.flaticon-stone-oven:before { content: "\f106"; }
+.flaticon-oven:before { content: "\f107"; }
+.flaticon-oven-1:before { content: "\f108"; }
+.flaticon-humidity:before { content: "\f109"; }
+.flaticon-humidity-1:before { content: "\f10a"; }
+.flaticon-recipe-book:before { content: "\f10b"; }
+.flaticon-baking:before { content: "\f10c"; }
+.flaticon-people:before { content: "\f10d"; }
+.flaticon-support:before { content: "\f10e"; }
+.flaticon-call-center:before { content: "\f10f"; }
+.flaticon-customer-service:before { content: "\f110"; }
+.flaticon-seatbelt:before { content: "\f111"; }
+.flaticon-driver:before { content: "\f112"; }
+.flaticon-human:before { content: "\f113"; }
+.flaticon-delivery-man:before { content: "\f114"; }
+.flaticon-stock:before { content: "\f115"; }
+.flaticon-warehouse:before { content: "\f116"; }
+.flaticon-pizza-cutter:before { content: "\f117"; }
+.flaticon-cooking:before { content: "\f118"; }
+.flaticon-dough:before { content: "\f119"; }
+.flaticon-chef-1:before { content: "\f11a"; }
     
-    $font-Flaticon-pizza-1: "\f100";
-    $font-Flaticon-pizza: "\f101";
-    $font-Flaticon-bicycle: "\f102";
-    $font-Flaticon-diet: "\f103";
-    $font-Flaticon-medal: "\f104";
-    $font-Flaticon-laugh: "\f105";
-    $font-Flaticon-chef: "\f106";
+    $font-Flaticon-thermometer: "\f100";
+    $font-Flaticon-chef: "\f101";
+    $font-Flaticon-vespa: "\f102";
+    $font-Flaticon-pizza-slice: "\f103";
+    $font-Flaticon-pizza: "\f104";
+    $font-Flaticon-italian-pizza-cut-into-slices: "\f105";
+    $font-Flaticon-stone-oven: "\f106";
+    $font-Flaticon-oven: "\f107";
+    $font-Flaticon-oven-1: "\f108";
+    $font-Flaticon-humidity: "\f109";
+    $font-Flaticon-humidity-1: "\f10a";
+    $font-Flaticon-recipe-book: "\f10b";
+    $font-Flaticon-baking: "\f10c";
+    $font-Flaticon-people: "\f10d";
+    $font-Flaticon-support: "\f10e";
+    $font-Flaticon-call-center: "\f10f";
+    $font-Flaticon-customer-service: "\f110";
+    $font-Flaticon-seatbelt: "\f111";
+    $font-Flaticon-driver: "\f112";
+    $font-Flaticon-human: "\f113";
+    $font-Flaticon-delivery-man: "\f114";
+    $font-Flaticon-stock: "\f115";
+    $font-Flaticon-warehouse: "\f116";
+    $font-Flaticon-pizza-cutter: "\f117";
+    $font-Flaticon-cooking: "\f118";
+    $font-Flaticon-dough: "\f119";
+    $font-Flaticon-chef-1: "\f11a";
