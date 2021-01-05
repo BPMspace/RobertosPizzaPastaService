@@ -1,27 +1,33 @@
 version: '3'
 services:
   ServiceDeskMail:
-        container_name: ServiceDeskMail$Number_Pizza_Team
         image: mailhog/mailhog
         restart: always
         ports:
-            - 4{$Number_Pizza_Team}25:8025
+            - $Port_Pizza_Team_ServiceDesk:8025
   KitchenMail:
-        container_name: KitchenMail$Number_Pizza_Team
         image: mailhog/mailhog
         restart: always
         ports:
-            - 4{$Number_Pizza_Team}26:8025
+            - $Port_Pizza_Team_Kitchen:8025
   DriverMail:
-        container_name: DriverMail$Number_Pizza_Team
         image: mailhog/mailhog
         restart: always
         ports:
-            - 4{$Number_Pizza_Team}27:8025
+            - $Port_Pizza_Team_Driver:8025
   RobertoWeb:
-       container_name: RobertoWeb$Number_Pizza_Team
-       image: php:7.4-apache
+       image: bpmspace/rpps-apache-php
        ports:
-            - 4{$Number_Pizza_Team}80:80
+            - $Port_Pizza_Team_web:443
        volumes:
          - './webroot/:/var/www/html/'
+         - './internal/internal_${Number_Pizza_Team}/:/var/www/html/internal'
+         - './dockerconf/apache2/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf'
+         - './dockerconf/apache2/certbot.pem:/etc/ssl/certs/certbot.pem'
+         - './dockerconf/apache2/certbot_priv.pem:/etc/ssl/certs/certbot_priv.pem'
+       environment:
+        - TEAM_NUMBER=${Number_Pizza_Team}
+networks:
+    default:
+      external:
+        name: pizza.${Number_Pizza_Team}
