@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Pizza Simulation Area"
+AuthUserFile /var/www/html/internal/.htpasswd
+Require valid-user
