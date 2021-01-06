@@ -9014,3 +9014,9 @@ textarea.form-control {
   color: var(--orange);
 }
 
+.order {
+  width: 600px;
+  height: 200px;
+  background-image: url("/inc/order.php?t");
+  background-color: #323232;
+}

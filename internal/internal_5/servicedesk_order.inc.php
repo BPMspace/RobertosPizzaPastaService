@@ -10,7 +10,8 @@
                <input type="button" id="btnShow" value="Check for new order" />
             </div>
             <div class="fonts" id="divShow">
-               <p><img src="/inc/order.php" alt="" /></p>
+               <!--<p><img src="/inc/order.php" alt="" /></p>-->
+			   <div class="order"></div>
             </div>
          </div>
       </div>
