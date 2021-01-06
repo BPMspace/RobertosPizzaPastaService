@@ -2,9 +2,16 @@
 
 <?php 
    $TEAM_NUMBER = getenv('TEAM_NUMBER'); 
-   $TEAM_NUMBER_BUTTON = "<div class=\"btn btn-team".$TEAM_NUMBER." btn-lg\">TEAM:".$TEAM_NUMBER."</div>";
+   $USER = ((isset($_SERVER['REMOTE_USER'])) ? $_SERVER['REMOTE_USER'] : 'Guest') ;
+
+   $SIMULATION_ROUND = 2;
    
-   
+   $TEAM_NUMBER_BUTTON = "<div class=\"btn team".$TEAM_NUMBER." btn-lg\">TEAM: ".$TEAM_NUMBER." Round: ". $SIMULATION_ROUND. " User: ".$USER."</div>";
+   $TEMPERATURE = mt_rand(22,34);
+   $TEMPERATURE_DECIMAL = str_pad(mt_rand(0,99),2,'0');
+   $HUMIDITY =  mt_rand(68,99);
+   $HUMIDITY_DECIMAL = str_pad(mt_rand(0,99),2,'0');
+
    ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +55,7 @@
                   <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
                   <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
                   <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                  <li class="nav-item"><a href="intern/index.php" class="nav-link">Employee</a></li>
+                  <li class="nav-item"><a href="internal/index.php" class="nav-link">Employee</a></li>
                </ul>
             </div>
          </div>
@@ -485,7 +492,7 @@
                         <div class="block-18 text-center">
                            <div class="text">
                               <div class="icon"><span class="flaticon-thermometer"></span></div>
-                              <strong class="number" data-number="32">0</strong><strong>°</strong>
+                              <strong class="number" data-number="<?php echo $TEMPERATURE ?>">0</strong><strong class="font_orange">.</strong><strong class="number" data-number="<?php echo $TEMPERATURE_DECIMAL ?>">0</strong><strong>°</strong>
                               <span><span>Temperature</span></span>
                            </div>
                         </div>
@@ -494,7 +501,7 @@
                         <div class="block-18 text-center">
                            <div class="text">
                               <div class="icon"><span class="flaticon-people"></span></div>
-                              <strong class="number" data-number="890567">0</strong>
+                              <strong class="number" data-number="18567">0</strong>
                               <span>Happy Customer since 1982</span>
                            </div>
                         </div>
@@ -503,7 +510,7 @@
                         <div class="block-18 text-center">
                            <div class="text">
                               <div class="icon"><span class="flaticon-humidity-1"></span></div>
-                              <strong class="number" data-number="90">0</strong> <strong>%</strong>
+                              <strong class="number" data-number="<?php echo $HUMIDITY ?>">0</strong><strong class="font_orange">.</strong><strong class="number" data-number="<?php echo $HUMIDITY_DECIMAL ?>">0</strong> <strong>%</strong>
                               <span>Humidity</span>
                            </div>
                         </div>
@@ -521,7 +528,13 @@
                   <div>><img class="img-responsive" src="./images/RPPS_MAP.png" alt="Pizza Simulation"></div>
                </div>
                <div class="col-md-6 appointment ftco-animate">
-                  <h3 class="mb-3">Login to the Simulation</h3>
+			   <h2 class="ftco-heading-2">mITSM Process Siumulation workshop</h2>
+                     <h3>Understanding processes in everyday work</h3>
+                     <p>Many managers are familiar with this situation: When processes are introduced, there is noticeable uncertainty among the employees involved. They do not recognize the necessity, may not feel properly involved or have concerns about changes in responsibilities and positions. With the help of our process simulation, we can sharpen this process awareness.</p>
+                     <h3>Simulation using the example of a pizza bakery</h3>
+                     <p>In this one-day workshop, you and your team will be intensively trained on the topic of process awareness in an exciting and playful way. Either on your premises or in our modern training rooms. The workshop is also suitable for large events with up to 150 participants and is led by our experienced specialists.</p>  
+			  
+			 	<!--  <h3 class="mb-3">Login to the Simulation</h3>
                   <form action="#" class="appointment-form">
                      <div class="d-md-flex">
                         <div class="form-group">
@@ -537,7 +550,8 @@
                         <input type="submit" value="Login" class="btn btn-primary py-3 px-4">
                      </div>
                   </form>
-               </div>
+-->
+				</div>
             </div>
          </div>
       </section>
@@ -547,12 +561,7 @@
             <div class="row mb-5">
                <div class="col-lg-9 col-md-9 mb-5 mb-md-5">
                   <div class="ftco-footer-widget mb-4">
-                     <h2 class="ftco-heading-2">About the mITSM Process Siumulation workshop</h2>
-                     <h3>Understanding processes in everyday work</h3>
-                     <p>Many managers are familiar with this situation: When processes are introduced, there is noticeable uncertainty among the employees involved. They do not recognize the necessity, may not feel properly involved or have concerns about changes in responsibilities and positions. With the help of our process simulation, we can sharpen this process awareness.</p>
-                     <h3>Simulation using the example of a pizza bakery</h3>
-                     <p>In this one-day workshop, you and your team will be intensively trained on the topic of process awareness in an exciting and playful way. Either on your premises or in our modern training rooms. The workshop is also suitable for large events with up to 150 participants and is led by our experienced specialists.</p>
-                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                                          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
@@ -566,7 +575,8 @@
                         <ul>
                            <li><a href="https://www.mitsm.de/schulung/prozess-simulation-pizzaservice/" target="_blank"><i class="fa  fa-info-circle" aria-hidden="true"></i>   Description</a></li>
                            <li><a href="https://www.mitsm.de/impressum/" target="_blank"><i class="fa   fa-external-link" aria-hidden="true"></i> Impressum</a></li>
-                           <li><a href="mailto:info@mitsm.de"><i class="fa  fa-envelope-o" aria-hidden="true"></i>    info@mitsm.de</a></li>
+						   <li><a href="mailto:info@mitsm.de"><i class="fa  fa-envelope-o" aria-hidden="true"></i>    info@mitsm.de</a></li>
+						   <li><a href="https://www.mitsm.de/" target="_blank"> <img src="images/mITSM-Logo.jpg" /> </a></li>
                         </ul>
                      </div>
                   </div>

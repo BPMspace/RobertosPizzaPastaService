@@ -27,6 +27,12 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+  --team1: #6610f2;
+  --team2: #28a745;
+  --team3: #b976ff;
+  --team4: #b3ec00;
+  --team5: #6d0032;
+  
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -8978,28 +8984,33 @@ textarea.form-control {
 .top-buffer_30 { margin-top:30px !important; }
 .top-buffer_60 { margin-top:60px !important; }
 
-.btn-team1 {
+.team1 {
   color: #fff;
-  background-color: #6610f2;
-  border-color: #6610f2; }
+  background-color: var(--team1);
+  border-color: var(--team1); }
 
-.btn-team2 {
+.team2 {
   color: #fff;
-  background-color: #28a745;
-  border-color: #28a745; }
+  background-color: var(--team2);
+  border-color: var(--team2); }
 
-.btn-team3 {
+.team3 {
   color: #fff;
-  background-color: #b976ff;
-  border-color: #b976ff; }
+  background-color: var(--team3);
+  border-color: var(--team3); }
 
 
-.btn-team4 {
+.team4 {
   color: #000;
-  background-color: #b3ec00;
-  border-color: #b3ec00; }
+  background-color: var(--team4);
+  border-color: var(--team4); }
 
-.btn-team5 {
-  color: #000;
-  background-color: #6d0032 ;
-  border-color: #6d0032 ; }
+.team5 {
+  color: #FFF;
+  background-color: var(--team5);
+  border-color: var(--team5); }
+  
+.font_orange {
+  color: var(--orange);
+}
+
