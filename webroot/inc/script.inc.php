@@ -22,7 +22,8 @@
 
       $('#btnShow').click(function() {
         //This is used for show the div.
-        $('#divShow').show();
+		location.reload(true);
+        //$('#divShow').show();
 
         //This setTimeout function execute when click on show div buton and hide automatically.
         setTimeout(function() {

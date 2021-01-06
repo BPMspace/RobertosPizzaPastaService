@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
    <div class="container">
-      <a class="navbar-brand" href="index.html"><img src = "https://www.mitsm.de/wp-content/uploads/2020/01/roberto-auf-transparent.png" class = "img-responsive" alt = "Pizza Simulation" /></a>
-      <div>
+      <a class="navbar-brand" href="index.html"><img src = "/images/roberto-auf-transparent.png" class = "img-responsive" alt = "Pizza Simulation" /></a>
+	  <div>
          <h4>
             <div class="btn btn-warning btn-lg">Prozess-Simulation </div>
             <?php echo $TEAM_NUMBER_BUTTON ?>
@@ -18,4 +18,6 @@
          </ul>
       </div>
    </div>
+   
+   
 </nav>

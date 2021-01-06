@@ -21,7 +21,7 @@ services:
             - $Port_Pizza_Team_web:443
        volumes:
          - './webroot/:/var/www/html/'
-         - './intern/intern_${Number_Pizza_Team}/:/var/www/html/intern'
+         - './internal/internal_${Number_Pizza_Team}/:/var/www/html/internal'
          - './dockerconf/apache2/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf'
          - './dockerconf/apache2/certbot.pem:/etc/ssl/certs/certbot.pem'
          - './dockerconf/apache2/certbot_priv.pem:/etc/ssl/certs/certbot_priv.pem'

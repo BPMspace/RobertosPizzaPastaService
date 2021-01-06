@@ -1,5 +1,5 @@
-<section class="ftco-section top-buffer_30">
-   <div class="container">
+<section class="ftco-gallery">
+   <div class="container-wrap">
       <div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
          <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Our Menu Pricing</h2>
