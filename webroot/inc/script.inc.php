@@ -12,6 +12,26 @@
 <script src="/js/bootstrap-datepicker.js"></script>
 <script src="/js/jquery.timepicker.min.js"></script>
 <script src="/js/scrollax.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+      //This setTimeout function execute or call automatically when 5 second completed.
+      setTimeout(function() {
+        $("#divShow").fadeOut(1500);
+      }, 5000);
+
+      $('#btnShow').click(function() {
+        //This is used for show the div.
+        $('#divShow').show();
+
+        //This setTimeout function execute when click on show div buton and hide automatically.
+        setTimeout(function() {
+          $("#divShow").fadeOut(1500);
+        }, 5000);
+
+      });
+    });
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="/js/google-map.js"></script>
 <script src="/js/main.js"></script>

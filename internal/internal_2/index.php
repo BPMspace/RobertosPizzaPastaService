@@ -12,7 +12,8 @@ require_once __DIR__ . '/../inc/config_simstart.php';
 <body>
 	<?php 
 	require_once __DIR__ . '/../inc/navigation.inc.php';
-	require_once __DIR__ . '/servicedesk_send.inc.php';
+	#require_once __DIR__ . '/servicedesk_send.inc.php';
+	require_once __DIR__ . '/servicedesk_order.inc.php';
 	require_once __DIR__ . '/../inc/script.inc.php';
 ?>
 

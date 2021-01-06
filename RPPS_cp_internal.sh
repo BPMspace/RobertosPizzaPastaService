@@ -66,6 +66,7 @@ case $1 in
 	sudo cp -u .htaccess "$d"; 
 	sudo cp -u .htpasswd "$d"; 
 	sudo cp -u servicedesk_send.inc.php "$d"; 
+	sudo cp -u servicedesk_order.inc.php "$d"; 
 	done;;
 	'force')
 	for d in */; 
@@ -73,6 +74,7 @@ case $1 in
 	sudo cp  .htaccess "$d"; 
 	sudo cp  .htpasswd "$d"; 
 	sudo cp  servicedesk_send.inc.php "$d"; 
+	sudo cp  servicedesk_order.inc.php "$d"; 
 	done;;
 	*)
 	echo $USAGE; exit 1;;
