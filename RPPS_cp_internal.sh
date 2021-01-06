@@ -61,9 +61,19 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )";
 cd $SCRIPT_DIR/internal/
 case $1 in
 	'')
-	for d in */; do sudo cp -u index.php "$d"; sudo cp -u .htaccess "$d"; sudo cp -u .htpasswd "$d"; done;;
+	for d in */; 
+	do sudo cp -u index.php "$d"; 
+	sudo cp -u .htaccess "$d"; 
+	sudo cp -u .htpasswd "$d"; 
+	sudo cp -u servicedesk_send.inc.php "$d"; 
+	done;;
 	'force')
-	for d in */; do sudo cp index.php "$d"; sudo cp .htaccess "$d"; sudo cp .htpasswd "$d"; done;;
+	for d in */; 
+	do sudo cp  index.php "$d"; 
+	sudo cp  .htaccess "$d"; 
+	sudo cp  .htpasswd "$d"; 
+	sudo cp  servicedesk_send.inc.php "$d"; 
+	done;;
 	*)
 	echo $USAGE; exit 1;;
 esac

@@ -2,3 +2,21 @@ AuthType Basic
 AuthName "Pizza Simulation Area"
 AuthUserFile /var/www/html/internal/.htpasswd
 Require valid-user
+
+#Prevent Users From Accessing .inc.php files in .htaccess
+<Files ~ ".inc.php$">
+Order allow,deny
+Deny from all
+</Files>
+
+#Prevent Users From Accessing .inc.jpg files in .htaccess
+<Files ~ ".inc.jpg$">
+Order allow,deny
+Deny from all
+</Files>
+
+#Prevent Users From Accessing .inc.png files in .htaccess
+<Files ~ ".inc.png$">
+Order allow,deny
+Deny from all
+</Files>
