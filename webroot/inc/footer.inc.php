@@ -2,32 +2,15 @@
    <div class="overlay"></div>
    <div class="container-wrap">
       <div class="row no-gutters d-md-flex align-items-center">
-         <div class="col-md-6 d-flex align-self-stretch">
-            <div>><img class="img-responsive" src="./images/RPPS_MAP.png" alt="Pizza Simulation"></div>
+         <div class="col-md-12 d-flex align-self-stretch">
+            <div><img class="img-responsive img-center " src="/images/RPPS_MAP.png" alt="Pizza Simulation"></div>
          </div>
-         <div class="col-md-6 appointment ftco-animate">
+         <div class="col-md-12 appointment ftco-animate">
             <h2 class="ftco-heading-2">mITSM Process Siumulation workshop</h2>
             <h3>Understanding processes in everyday work</h3>
             <p>Many managers are familiar with this situation: When processes are introduced, there is noticeable uncertainty among the employees involved. They do not recognize the necessity, may not feel properly involved or have concerns about changes in responsibilities and positions. With the help of our process simulation, we can sharpen this process awareness.</p>
             <h3>Simulation using the example of a pizza bakery</h3>
             <p>In this one-day workshop, you and your team will be intensively trained on the topic of process awareness in an exciting and playful way. Either on your premises or in our modern training rooms. The workshop is also suitable for large events with up to 150 participants and is led by our experienced specialists.</p>
-            <!--  <h3 class="mb-3">Login to the Simulation</h3>
-               <form action="#" class="appointment-form">
-                  <div class="d-md-flex">
-                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="User ID or E-Mail">
-                     </div>
-                  </div>
-                  <div class="d-me-flex">
-                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
-                     </div>
-                  </div>
-                  <div class="form-group">
-                     <input type="submit" value="Login" class="btn btn-primary py-3 px-4">
-                  </div>
-               </form>
-               -->
          </div>
       </div>
    </div>

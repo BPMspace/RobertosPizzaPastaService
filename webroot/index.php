@@ -1,6 +1,6 @@
 <?php 
-require_once __DIR__ . '/inc/config.inc.php';
 require_once __DIR__ . '/inc/config_simstart.php';
+require_once __DIR__ . '/inc/config.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

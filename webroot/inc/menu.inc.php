@@ -8,9 +8,8 @@
                <h2 class="mb-4"><br/>Pizza</h2>
             </div>
          </div>
-      </div>
-      <div class="row">
-         <div class="col-md-6">
+         <div class="row">
+         <div class="col-md-6 heading-section text-center ftco-animate">
             <div class="pricing-entry d-flex ftco-animate">
                <div class="img" style="background-image: url(images/pizza-1.jpg);"></div>
                <div class="desc pl-3">
@@ -84,7 +83,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-6">
+         <div class="col-md-6 heading-section text-center ftco-animate">
             <div class="pricing-entry d-flex ftco-animate">
                <div class="img" style="background-image: url(images/pizza-5.jpg);"></div>
                <div class="desc pl-3">

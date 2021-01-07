@@ -18,7 +18,7 @@
       //This setTimeout function execute or call automatically when 5 second completed.
       setTimeout(function() {
         $("#divShow").fadeOut(1500);
-      }, 5000);
+      }, 7000);
 
       $('#btnShow').click(function() {
         //This is used for show the div.
@@ -28,7 +28,7 @@
         //This setTimeout function execute when click on show div buton and hide automatically.
         setTimeout(function() {
           $("#divShow").fadeOut(1500);
-        }, 5000);
+        }, 2000);
 
       });
     });

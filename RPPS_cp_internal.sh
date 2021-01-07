@@ -59,26 +59,27 @@ touch $LOCK_FILE
 #  SCRIPT LOGIC GOES HERE
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )";
 cd $SCRIPT_DIR/internal/
-case $1 in
-	'')
-	for d in */; 
-	do sudo cp -u index.php "$d"; 
-	sudo cp -u .htaccess "$d"; 
-	sudo cp -u .htpasswd "$d"; 
-	sudo cp -u servicedesk_send.inc.php "$d"; 
-	sudo cp -u servicedesk_order.inc.php "$d"; 
-	done;;
-	'force')
-	for d in */; 
-	do sudo cp  index.php "$d"; 
-	sudo cp  .htaccess "$d"; 
-	sudo cp  .htpasswd "$d"; 
-	sudo cp  servicedesk_send.inc.php "$d"; 
-	sudo cp  servicedesk_order.inc.php "$d"; 
-	done;;
-	*)
-	echo $USAGE; exit 1;;
-esac
-sudo chown -R $(id -u):www-data $SCRIPT_DIR/internal/
-
+while :; do 
+	case $1 in
+		'')
+		for d in */; 
+		do sudo cp -u index.php "$d"; 
+		sudo cp -u .htaccess "$d"; 
+		sudo cp -u .htpasswd "$d"; 
+		sudo cp -u servicedesk_send.inc.php "$d"; 
+		sudo cp -u servicedesk_order.inc.php "$d"; 
+		done;;
+		'force')
+		for d in */; 
+		do sudo cp  index.php "$d"; 
+		sudo cp  .htaccess "$d"; 
+		sudo cp  .htpasswd "$d"; 
+		sudo cp  servicedesk_send.inc.php "$d"; 
+		sudo cp  servicedesk_order.inc.php "$d"; 
+		done;;
+		*)
+		echo $USAGE; exit 1;;
+	esac
+	sudo chown -R $(id -u):www-data $SCRIPT_DIR/internal/
+echo -en "\r" $(date +%x_%r)' - Do copy loop to internal with parameter "'$1'" to sub folder - Press <CTRL+C> to exit.'; sleep 1;  done
 # -----------------------------------------------------------------

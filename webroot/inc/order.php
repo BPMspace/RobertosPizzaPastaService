@@ -2,7 +2,7 @@
 header("Content-type: image/png"); 
 $str1= 'Servus Rob  aus BZ '; 
 $str2= rand(1924,934465); 
-$image= imagecreate(600,200); 
+$image= imagecreate(800,300); 
 $background = imagecolorallocate($image,50,50,50); 
 $color= imagecolorallocate($image,255,255,255); 
 imagefill($image,0,0,$background); 
