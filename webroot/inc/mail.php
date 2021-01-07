@@ -11,9 +11,9 @@ use PHPMailer\PHPMailer\Exception;
 require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
-
+echo time()."<br>";;
 echo $_POST['subject']."<br>";
-echo $_POST['messages']."<br>";
+echo $_POST['message']."<br>";
 echo $_POST['kitchen']."<br>";
 echo $_POST['driver']."<br>";
 echo $_POST['redirect']."<br>";
