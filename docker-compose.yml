@@ -26,8 +26,42 @@ services:
          - './dockerconf/apache2/certbot.pem:/etc/ssl/certs/certbot.pem'
          - './dockerconf/apache2/certbot_priv.pem:/etc/ssl/certs/certbot_priv.pem'
        environment:
-        - TEAM_NUMBER=${Number_Pizza_Team}
+        - Number_Pizza_Team=${Number_Pizza_Team}
+        - Port_Pizza_Team_DB=${Port_Pizza_Team_DB}
+        - Port_Pizza_Team_PHPADMIN=${Port_Pizza_Team_PHPADMIN}
+        - Port_Pizza_Team_web=${Port_Pizza_Team_web}
+        - Port_Pizza_Team_ServiceDesk=${Port_Pizza_Team_ServiceDesk}
+        - Port_Pizza_Team_Kitchen=${Port_Pizza_Team_Kitchen}
+        - Port_Pizza_Team_Driver=${Port_Pizza_Team_Driver}
+  RPPS_mariadb10:
+        image: mariadb:latest
+        ports:
+        - ${Port_Pizza_Team_DB}:3306
+        command: [mysqld, --default-authentication-plugin=mysql_native_password, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+        volumes:
+        - ./mariadb10/mariadb10_${Number_Pizza_Team}:/var/lib/mysql
+        environment:
+        - MYSQL_ROOT_PASSWORD=RPPS!11
+        - MYSQL_DATABASE=RPPS
+        - MYSQL_USER=RPPS
+        - MYSQL_PASSWORD=RPPS!11
+        working_dir: /root/import
+  RPPS_phpmyadmin-mariadb:
+        image: phpmyadmin/phpmyadmin:latest
+        ports:
+        - ${Port_Pizza_Team_PHPADMIN}:80
+        volumes:
+        - ./dockerconf/htaccess/.htaccess:/var/www/html/.htaccess
+        - ./dockerconf/htaccess/.htpasswd:/htaccess/.htpasswd
+        depends_on:
+        - RPPS_mariadb10
+        working_dir: /etc/phpmyadmin/
+        environment:
+        - PMA_HOST=RPPS_mariadb10
+        - PMA_PORT=3306 
+        - PMA_USER=root
+        - PMA_PASSWORD=RPPS!11
 networks:
-    default:
-      external:
-        name: pizza.${Number_Pizza_Team}
+        default:
+          external:
+                name: SIM_RPPS.${Number_Pizza_Team}

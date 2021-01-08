@@ -1,0 +1,9 @@
+AuthName "EduMS Under Development"
+AuthUserFile /htaccess/.htpasswd
+AuthType basic
+Require valid-user
+Order deny,allow
+Deny from all
+allow from 127.0.0.1
+Satisfy Any
+

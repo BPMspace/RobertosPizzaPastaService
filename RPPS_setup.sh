@@ -92,28 +92,33 @@ if [ $# -eq 0 ]
 esac
 fi
 
+#export Port_Pizza_Team_DB=6033;
+#export Port_Pizza_Team_PHPADMIN=6080;
+#docker network create SIM_RPPS;
+#docker-compose -f $SCRIPT_DIR/docker-compose.base.yml up -d
+
 for i in $(seq 1 $END); do 
 
 export Number_Pizza_Team=$i;
 export Project_Name_Pizza_Team=RPPS_${i};
 export Port_Pizza_Team_web=6${i}40;
+export Port_Pizza_Team_PHPADMIN=6${i}41;
 export Port_Pizza_Team_ServiceDesk=6${i}42;
 export Port_Pizza_Team_Kitchen=6${i}43;
 export Port_Pizza_Team_Driver=6${i}44;
-docker network create pizza.${Number_Pizza_Team};
+export Port_Pizza_Team_DB=6${i}33;
 echo "Teams#: " $Project_Name_Pizza_Team;
-
 case $2 in
 
   'up'|'')
     mkdir -p $SCRIPT_DIR/internal/internal_$1;
-    docker network create pizza.${Number_Pizza_Team};
+	docker network create SIM_RPPS.$Number_Pizza_Team;
     docker-compose -p $Project_Name_Pizza_Team up -d
     ;;
 
   'down')
     docker-compose -p $Project_Name_Pizza_Team down;
-    docker network rm  pizza.${Number_Pizza_Team};
+	#docker-compose -f $SCRIPT_DIR/docker-compose.base.yml down;
     docker network prune --force;
     
     ;;
