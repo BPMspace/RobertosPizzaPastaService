@@ -8986,6 +8986,11 @@ textarea.form-control {
 .top-buffer_45 { margin-top:45px !important; }
 .top-buffer_60 { margin-top:60px !important; }
 
+.left-buffer_15 { margin-left:15px !important; }
+.left-buffer_30 { margin-left:30px !important; }
+.left-buffer_45 { margin-left:45px !important; }
+.left-buffer_60 { margin-left:60px !important; }
+
 .team1 {
   color: #fff;
   background-color: var(--team1);
@@ -9035,10 +9040,10 @@ textarea.form-control {
 
 
 
+/*
 
-/*
-/*
 div[class*=col-] {border: 10px solid #FFF;}
+/*
 div[class*=col-]:first-child {border: 3px solid #F00;}
 div[class*=col-]:nth-child(2) {border: 3px solid #0F0;}
 */
