@@ -1,4 +1,5 @@
 /mariadb10*
+/internal/internal_*
 /dockerconf/apache2/certbot.pem
 /dockerconf/apache2/certbot_priv.pem
 

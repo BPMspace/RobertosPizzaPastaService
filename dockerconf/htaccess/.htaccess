@@ -1,4 +1,4 @@
-AuthName "EduMS Under Development"
+AuthName "Robertos Pizza & Pasta Service Backend"
 AuthUserFile /htaccess/.htpasswd
 AuthType basic
 Require valid-user
