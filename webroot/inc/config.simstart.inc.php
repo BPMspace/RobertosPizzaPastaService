@@ -1,0 +1,5 @@
+<?php 
+   $SIMULATION_ROUND = 1;
+   $SIMULATION_TIME_START = 12;
+   $SIMULATION_TIME = 12;
+?>

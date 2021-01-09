@@ -3,6 +3,9 @@ AuthName "Pizza Simulation Area"
 AuthUserFile /var/www/html/internal/.htpasswd
 Require valid-user
 
+RewriteEngine On
+RewriteBase /
+
 #Prevent Users From Accessing .inc.php files in .htaccess
 <Files ~ ".inc.php$">
 Order allow,deny
@@ -20,3 +23,6 @@ Deny from all
 Order allow,deny
 Deny from all
 </Files>
+
+# Disable directory browsing
+Options All -Indexes

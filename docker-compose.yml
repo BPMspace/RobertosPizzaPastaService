@@ -1,21 +1,21 @@
 version: '3'
 services:
-  ServiceDeskMail:
+  RPPS_ServiceDeskMail:
         image: mailhog/mailhog
         restart: always
         ports:
             - $Port_Pizza_Team_ServiceDesk:8025
-  KitchenMail:
+  RPPS_KitchenMail:
         image: mailhog/mailhog
         restart: always
         ports:
             - $Port_Pizza_Team_Kitchen:8025
-  DriverMail:
+  RPPS_DriverMail:
         image: mailhog/mailhog
         restart: always
         ports:
             - $Port_Pizza_Team_Driver:8025
-  RobertoWeb:
+  RPPS_RobertoWeb:
        image: bpmspace/rpps-apache-php
        ports:
             - $Port_Pizza_Team_web:443
@@ -27,12 +27,15 @@ services:
          - './dockerconf/apache2/certbot_priv.pem:/etc/ssl/certs/certbot_priv.pem'
        environment:
         - Number_Pizza_Team=${Number_Pizza_Team}
+        - Passwd_Pizza_Team_DB=${Passwd_Pizza_Team_DB}
         - Port_Pizza_Team_DB=${Port_Pizza_Team_DB}
         - Port_Pizza_Team_PHPADMIN=${Port_Pizza_Team_PHPADMIN}
         - Port_Pizza_Team_web=${Port_Pizza_Team_web}
         - Port_Pizza_Team_ServiceDesk=${Port_Pizza_Team_ServiceDesk}
         - Port_Pizza_Team_Kitchen=${Port_Pizza_Team_Kitchen}
         - Port_Pizza_Team_Driver=${Port_Pizza_Team_Driver}
+       links:
+        -  RPPS_mariadb10
   RPPS_mariadb10:
         image: mariadb:latest
         ports:
@@ -41,10 +44,10 @@ services:
         volumes:
         - ./mariadb10/mariadb10_${Number_Pizza_Team}:/var/lib/mysql
         environment:
-        - MYSQL_ROOT_PASSWORD=RPPS!11
+        - MYSQL_ROOT_PASSWORD=${Passwd_Pizza_Team_DB}
         - MYSQL_DATABASE=RPPS
         - MYSQL_USER=RPPS
-        - MYSQL_PASSWORD=RPPS!11
+        - MYSQL_PASSWORD=${Passwd_Pizza_Team_DB}
         working_dir: /root/import
   RPPS_phpmyadmin-mariadb:
         image: phpmyadmin/phpmyadmin:latest
@@ -60,7 +63,7 @@ services:
         - PMA_HOST=RPPS_mariadb10
         - PMA_PORT=3306 
         - PMA_USER=root
-        - PMA_PASSWORD=RPPS!11
+        - PMA_PASSWORD=${Passwd_Pizza_Team_DB}
 networks:
         default:
           external:

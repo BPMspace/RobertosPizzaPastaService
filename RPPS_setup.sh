@@ -92,6 +92,7 @@ if [ $# -eq 0 ]
 esac
 fi
 
+export Passwd_Pizza_Team_DB="RPPS!11";
 #export Port_Pizza_Team_DB=6033;
 #export Port_Pizza_Team_PHPADMIN=6080;
 #docker network create SIM_RPPS;
@@ -118,6 +119,7 @@ case $2 in
 
   'down')
     docker-compose -p $Project_Name_Pizza_Team down;
+	docker stop $(docker ps -a -q --filter "name=RPPS*");
 	#docker-compose -f $SCRIPT_DIR/docker-compose.base.yml down;
     docker network prune --force;
     
