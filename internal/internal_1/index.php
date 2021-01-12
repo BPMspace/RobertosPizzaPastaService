@@ -1,6 +1,7 @@
 <?php 
    require_once __DIR__ . '/../inc/config.simstart.inc.php';
    require_once __DIR__ . '/../inc/config.inc.php';
+   require_once __DIR__ . '/../inc/config.db.inc.php';
    ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +27,11 @@
               <div class="col-md-12 fixed_order">
                  <?php require_once __DIR__ . '/servicedesk_send.inc.php';?>
               </div>
-			  <div class="col-md-10">
+			  <div class="col-md-12">
                  <div><img class="img-responsive" src="/images/RPPS_MAP.png" alt="Pizza Simulation"></div>
               </div>
 			  <div class="col-md-12">
-			  
+				<?php require_once __DIR__ . '/../inc/menu.inc.php';?>
 			  </div>
            </div>
         </section>

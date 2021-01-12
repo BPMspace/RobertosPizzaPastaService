@@ -36,7 +36,9 @@
                 echo '<div class="d-flex text align-items-center">';
                 echo '<h3><span>'.$row['name'].'</span></h3>';
                 echo '<span class="price">'.$row['price'].'</span>';
-                echo '</div><div class="d-block"><p>'.$row['ingredients'].'</p></div>';
+                echo '</div><div class="d-block"><p>'.$row['ingredients'];
+				echo (($INTERNAL == true) ? $row['weight'].' g' : '');
+				echo '</p></div>';
                 echo '</div></div></div>';
             } ?>
             </div>
