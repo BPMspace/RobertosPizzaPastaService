@@ -35,7 +35,7 @@
                 echo '<div class="desc pl-3">';
                 echo '<div class="d-flex text align-items-center">';
                 echo '<h3><span>'.$row['name'].'</span></h3>';
-                echo '<span class="price">'.$row['price'].'</span>';
+                echo '<span class="price">N/A</span>';
                 echo '</div><div class="d-block"><p>'.$row['ingredients'];
 				echo (($INTERNAL == true) ? $row['weight'].' g' : '');
 				echo '</p></div>';
@@ -43,5 +43,6 @@
             } ?>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-2">.</div>
+
       </div>

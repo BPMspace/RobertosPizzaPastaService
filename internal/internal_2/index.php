@@ -33,6 +33,7 @@
 			  <div class="col-md-12">
 				<?php require_once __DIR__ . '/../inc/menu.inc.php';?>
 			  </div>
+			  <span></span>
            </div>
         </section>
 

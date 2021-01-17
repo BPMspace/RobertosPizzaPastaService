@@ -38,16 +38,30 @@ CREATE TABLE IF NOT EXISTS `RPPS`.`TASK` (
   `subject` VARCHAR(255) NOT NULL ,
   `message` TEXT NOT NULL ,
   `sender` ENUM('service','kitchen','driver') NOT NULL ,
-  `receiver` ENUM('service','kitchen','driver') NOT NULL , `status` ENUM('new','progress','waiting','done') NOT NULL , `timestamp` TIMESTAMP  NOT NULL DEFAULT NOW() , `history` TEXT NOT NULL, PRIMARY KEY (`TASK_ID`)) ENGINE = InnoDB AUTO_INCREMENT=9365463;
-CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER_TEMPLATE` (
+  `receiver` ENUM('service','kitchen','driver') NOT NULL ,
+  `status` ENUM('new','progress','waiting','done') NOT NULL ,
+  `timestamp` TIMESTAMP  NOT NULL DEFAULT NOW() ,
+  `history` TEXT NOT NULL, PRIMARY KEY (`TASK_ID`)) ENGINE = InnoDB AUTO_INCREMENT=9365463;
+CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER` (
   `ORDER_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ORDER_TEMP_ID` INT,
+  `round` INT,
+  `timestamp_in` TIMESTAMP  NOT NULL DEFAULT NOW() ,
+  `timestamp_out` TIMESTAMP ,
+  `wine` TINYINT(1) ,
+  `area` TINYINT(1) ,
+  `price` DECIMAL(13,2) ,
+  `weight` INT ,
+  PRIMARY KEY (`ORDER_ID`)) ENGINE = InnoDB AUTO_INCREMENT=2653;
+CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER_TEMPLATE` (
+  `ORDER_TEMP_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `customer` VARCHAR(255) NOT NULL ,
   `adress` TEXT NOT NULL ,
   `order` TEXT NOT NULL ,
   `area` TINYINT(1) ,
   `price` DECIMAL(13,2) NOT NULL ,
   `weight` INT NOT NULL ,
-  PRIMARY KEY (`ORDER_ID`)) ENGINE = InnoDB AUTO_INCREMENT=601;
+  PRIMARY KEY (`ORDER_TEMP_ID`)) ENGINE = InnoDB AUTO_INCREMENT=601;
 CREATE TABLE IF NOT EXISTS `RPPS`.`CUSTOMER` (
 `CUSTOMER_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
  `name` VARCHAR(255) NOT NULL ,
@@ -109,7 +123,7 @@ INSERT IGNORE INTO `MENU` (`MENU_ID`, `type`, `name`, `ingredients`, `price`, `w
 (6760, 'Extra', 'Pesto', '', '2.60', 17, '/images/pesto.jpg'),
 (6761, 'Extra', 'Garlic', '', '1.10', 22, '/images/knoblauch.jpg');
 
-INSERT IGNORE INTO `ORDER_TEMPLATE` (`ORDER_ID`, `customer`, `adress`, `order`, `area`, `price`, `weight`) VALUES
+INSERT IGNORE INTO `ORDER_TEMPLATE` (`ORDER_TEMP_ID`, `customer`, `adress`, `order`, `area`, `price`, `weight`) VALUES
 (601, 'Andrea', 'via dei Giubbonari Ecke via dei Cestari ', '1 x Pizza Grandiosa with extra Ananas ', 1, '0.00', 0),
 (602, 'Isabella', '', 'the usual ', 0, '0.00', 0),
 (603, 'Fausto', 'via del Boschetto Ecke via di Sotto ', '2 x Pizza Salami, 1 x Pizza Funghi and 1 x Pasta Tonno ', 1, '0.00', 0),

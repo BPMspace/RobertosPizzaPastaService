@@ -66,12 +66,7 @@ unset  Port_Pizza_Team_ServiceDesk;
 unset  Port_Pizza_Team_Kitchen;
 unset  Port_Pizza_Team_Driver;
 
-sudo cp $CERT_DIR/cert.pem $SCRIPT_DIR/dockerconf/apache2/certbot.pem
-sudo cp $CERT_DIR/privkey.pem $SCRIPT_DIR/dockerconf/apache2/certbot_priv.pem
 
-cd $SCRIPT_DIR/Dockerfile
-docker build -t bpmspace/rpps-apache-php:latest -f $SCRIPT_DIR//Dockerfile/Dockerfile.apache_php .
-cd $SCRIPT_DIR
 
 if [ $# -eq 0 ]
   then
@@ -98,16 +93,21 @@ export Passwd_Pizza_Team_DB="RPPS!11";
 #docker network create SIM_RPPS;
 #docker-compose -f $SCRIPT_DIR/docker-compose.base.yml up -d
 
+sudo cp $CERT_DIR/cert.pem $SCRIPT_DIR/dockerconf/apache2/certbot.pem
+sudo cp $CERT_DIR/privkey.pem $SCRIPT_DIR/dockerconf/apache2/certbot_priv.pem
+
+cd $SCRIPT_DIR/Dockerfile
+docker build -t bpmspace/rpps-apache-php:latest -f $SCRIPT_DIR//Dockerfile/Dockerfile.apache_php .
+cd $SCRIPT_DIR
+
 for i in $(seq 1 $END); do 
 
 export Number_Pizza_Team=$i;
 export Project_Name_Pizza_Team=RPPS_${i};
 export Port_Pizza_Team_web=6${i}40;
 export Port_Pizza_Team_PHPADMIN=6${i}41;
-export Port_Pizza_Team_ServiceDesk=6${i}42;
-export Port_Pizza_Team_Kitchen=6${i}43;
-export Port_Pizza_Team_Driver=6${i}44;
 export Port_Pizza_Team_DB=6${i}33;
+
 echo "Teams#: " $Project_Name_Pizza_Team;
 case $2 in
 
@@ -133,10 +133,8 @@ done
 
 unset  Number_Pizza_Team;
 unset  Port_Pizza_Team_web;
-unset  Port_Pizza_Team_ServiceDesk;
-unset  Port_Pizza_Team_Kitchen;
-unset  Port_Pizza_Team_Driver;
 
-sudo chown -R $(id -u):www-data $SCRIPT_DIR/internal/
-sudo chown -R $(id -u):www-data $SCRIPT_DIR/webroot/
+
+#sudo chown -R $(id -u):www-data $SCRIPT_DIR/internal/
+#sudo chown -R $(id -u):www-data $SCRIPT_DIR/webroot/
 # -----------------------------------------------------------------

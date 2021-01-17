@@ -1,20 +1,5 @@
 version: '3'
 services:
-  RPPS_ServiceDeskMail:
-        image: mailhog/mailhog
-        restart: always
-        ports:
-            - $Port_Pizza_Team_ServiceDesk:8025
-  RPPS_KitchenMail:
-        image: mailhog/mailhog
-        restart: always
-        ports:
-            - $Port_Pizza_Team_Kitchen:8025
-  RPPS_DriverMail:
-        image: mailhog/mailhog
-        restart: always
-        ports:
-            - $Port_Pizza_Team_Driver:8025
   RPPS_RobertoWeb:
        image: bpmspace/rpps-apache-php
        ports:
@@ -31,9 +16,7 @@ services:
         - Port_Pizza_Team_DB=${Port_Pizza_Team_DB}
         - Port_Pizza_Team_PHPADMIN=${Port_Pizza_Team_PHPADMIN}
         - Port_Pizza_Team_web=${Port_Pizza_Team_web}
-        - Port_Pizza_Team_ServiceDesk=${Port_Pizza_Team_ServiceDesk}
-        - Port_Pizza_Team_Kitchen=${Port_Pizza_Team_Kitchen}
-        - Port_Pizza_Team_Driver=${Port_Pizza_Team_Driver}
+
        links:
         -  RPPS_mariadb10
   RPPS_mariadb10:
@@ -48,6 +31,7 @@ services:
         - MYSQL_DATABASE=RPPS
         - MYSQL_USER=RPPS
         - MYSQL_PASSWORD=${Passwd_Pizza_Team_DB}
+        - TZ=Europe/Berlin
         working_dir: /root/import
   RPPS_phpmyadmin-mariadb:
         image: phpmyadmin/phpmyadmin:latest
@@ -66,5 +50,5 @@ services:
         - PMA_PASSWORD=${Passwd_Pizza_Team_DB}
 networks:
         default:
-          external:
-                name: SIM_RPPS.${Number_Pizza_Team}
+         external:
+           name: SIM_RPPS.${Number_Pizza_Team}
