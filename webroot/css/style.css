@@ -9030,8 +9030,13 @@ textarea.form-control {
 }
 
 .fixed_order{
-    width: 900px;
-	height: 500px;
+    width: 700px;
+	height: 525px;
+}
+.fixed_meeting{
+    width: 700px;
+	height: 525px;
+	margin: 0 auto;
 }
 
 .img-responsive.img-center {
@@ -9040,10 +9045,10 @@ textarea.form-control {
 
 
 
-/*
 
-div[class*=col-] {border: 10px solid #FFF;}
 /*
+div[class*=col-] {border: 10px solid #FFF;}
 div[class*=col-]:first-child {border: 3px solid #F00;}
 div[class*=col-]:nth-child(2) {border: 3px solid #0F0;}
 */
+/*
