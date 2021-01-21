@@ -12,15 +12,33 @@
 <script src="/js/bootstrap-datepicker.js"></script>
 <script src="/js/jquery.timepicker.min.js"></script>
 <script src="/js/scrollax.min.js"></script>
+<script>
+		if (document.addEventListener) {
+  document.addEventListener('contextmenu', function(e) {
+    alert("Pizza Sim Rule violation"); //here you draw your own menu
+    e.preventDefault();
+  }, false);
+} else {
+  document.attachEvent('oncontextmenu', function() {
+    alert("Pizza Sim Rule violation");
+    window.event.returnValue = false;
+  });
+}
+        </script>
         <script src="https://meet.jit.si/external_api.js"></script>
         <script>
             var options = {
-                roomName: "Team <?php echo $TEAM_NUMBER ?> - CommonRoom - Round <?php echo $SIMULATION_ROUND ?>",
+                roomName: "Pizza SIM Team <?php echo $TEAM_NUMBER ?> - <?php echo $ROOM ?> - Round <?php echo $SIMULATION_ROUND ?>",
                 width: 700,
                 height: 525,
                 parentNode: document.querySelector('#meeting'),
-                configOverwrite: {},
-                interfaceConfigOverwrite: {}
+                configOverwrite: {prejoinPageEnabled: false, startScreenSharing: false, localRecording: false, startWithVideoMuted: false},
+				userInfo: {
+						displayName: '<?php echo $USER ?>'
+				},
+                interfaceConfigOverwrite: {
+					SHOW_CHROME_EXTENSION_BANNER: false,
+					TOOLBAR_BUTTONS: ['microphone', 'camera']}
             }
             var api = new JitsiMeetExternalAPI("meet.jit.si", options);
         </script>
@@ -37,9 +55,6 @@
         }, 20000);
 
       $('#btnShow').click(function() {
-        //This is used for show the div.
-		//location.reload(true);
-        //$('#divShow').load(window.location.href + '#divShow' );
 		$('.order').css('background-image', '');
 		$('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
 		$('#divShow').show();
