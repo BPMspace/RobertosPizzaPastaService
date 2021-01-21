@@ -29,20 +29,30 @@
 
       //This setTimeout function execute or call automatically when 5 second completed.
       setTimeout(function() {
-        $("#divShow").fadeOut(10000);
-      }, 10000);
+        $("#divShow").fadeOut(1000);
+      }, 20000);
+	  $('#btnShow').hide();
+		setTimeout(function() {
+          $("#btnShow").show();
+        }, 20000);
 
       $('#btnShow').click(function() {
         //This is used for show the div.
 		//location.reload(true);
         //$('#divShow').load(window.location.href + '#divShow' );
-		$('.order').css('background-image', 'url(https://pizza.bpmspace.net:6140/order.php?time)'); 
-		$('#divShow').show(); 
+		$('.order').css('background-image', '');
+		$('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
+		$('#divShow').show();
+		$('#btnShow').hide();
+		setTimeout(function() {
+          $("#btnShow").show();
+        }, 21000);
+		
 
         //This setTimeout function execute when click on show div buton and hide automatically.
         setTimeout(function() {
-          $("#divShow").fadeOut(10000);
-        }, 10000);
+          $("#divShow").fadeOut(1000);
+        }, 20000);
 
       });
     });
