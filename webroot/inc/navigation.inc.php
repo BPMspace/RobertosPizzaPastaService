@@ -3,11 +3,9 @@
       <a class="navbar-brand" href="/index.php"><img src = "/images/roberto-auf-transparent.png" class = "img-responsive" alt = "Pizza Simulation" /></a>
 	  <div>
          <h4>
-            <div class="btn btn-warning btn-lg">Prozess-Simulation </div>
             <?php echo $TEAM_NUMBER_BUTTON?>
-            <?php echo $SIMULATION_TIME_START_BUTTON?>
          </h4>
-         <h4 class="subline">Robertos Pizza &amp; Pasta Service</h4>
+         <h4 class="subline">Robertos Pizza &amp; Pasta Service - <span class= "font_orange">Prozess-Simulation</span></h4>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu

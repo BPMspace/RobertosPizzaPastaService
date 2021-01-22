@@ -1,7 +1,7 @@
 <?php 
-require_once __DIR__ . '/inc/config.simstart.inc.php';
-require_once __DIR__ . '/inc/config.inc.php';
 require_once __DIR__ . '/inc/config.db.inc.php';
+require_once __DIR__ . '/inc/config.inc.php';
+require_once __DIR__ . '/inc/config.simstart.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

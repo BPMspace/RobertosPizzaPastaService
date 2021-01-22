@@ -3,6 +3,23 @@ require_once __DIR__ . '/inc/config.simstart.inc.php';
 require_once __DIR__ . '/inc/config.inc.php';
 require_once __DIR__ . '/inc/config.db.inc.php';
 
+/* set new TEMPERATURE/HUMIDITY for this order
+$HUMIDITY = $HUMIDITY+mt_rand(-3,+3);
+$TEMPERATURE = $TEMPERATURE+mt_rand(-2,+3);
+putenv("TEMPERATURE=");
+putenv("HUMIDITY="$HUMIDITY); 
+*/
+IF ($SIM_STARTED == "NOT STARTED") {
+	header("Content-type: image/png");
+	echo file_get_contents('images/aperto.png') ;
+	die();
+}
+IF ($SIM_STARTED == "FINISHED") {
+	header("Content-type: image/png");
+	echo file_get_contents('images/chiuso.png') ;
+	die();
+}
+
 // Create connection
 $dsn = 'mysql:dbname='.$dbname.';host='.$servername.';port=3306;charset=utf8';
 $conn = new PDO($dsn, $username, $dbpassword);

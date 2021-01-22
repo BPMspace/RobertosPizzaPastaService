@@ -9023,8 +9023,8 @@ textarea.form-control {
 
 .order {
   margin-top: 30px;
-  width: 600px;
-  height: 300px;
+  width: 700px;
+  height: 525px;
   background-image: url("/order.php?time");
   background-color: #323232;
 }
