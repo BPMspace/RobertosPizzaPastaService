@@ -118,7 +118,7 @@ case $2 in
     ;;
 
   'down')
-    docker-compose -p $Project_Name_Pizza_Team down;
+    docker-compose --remove-orphans -p $Project_Name_Pizza_Team down;
 	docker stop $(docker ps -a -q --filter "name=RPPS*");
 	#docker-compose -f $SCRIPT_DIR/docker-compose.base.yml down;
     docker network prune --force;

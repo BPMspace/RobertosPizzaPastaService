@@ -12,8 +12,9 @@
 <script src="/js/bootstrap-datepicker.js"></script>
 <script src="/js/jquery.timepicker.min.js"></script>
 <script src="/js/scrollax.min.js"></script>
+<script src="https://meet.jit.si/external_api.js"></script>
 <script>
-		if (document.addEventListener) {
+/*if (document.addEventListener) {
   document.addEventListener('contextmenu', function(e) {
     alert("Pizza Sim Rule violation"); //here you draw your own menu
     e.preventDefault();
@@ -24,10 +25,8 @@
     window.event.returnValue = false;
   });
 }
+*/
 </script>
-
-<script src="https://meet.jit.si/external_api.js"></script>
-
 <script>
             var options = {
                 roomName: "Pizza SIM Team <?php echo $TEAM_NUMBER ?> - <?php echo $ROOM ?> - Round <?php echo $SIMULATION_ROUND ?>",
@@ -44,10 +43,17 @@
             }
             var api = new JitsiMeetExternalAPI("meet.jit.si", options);
 </script>
-
+<script>
+$(document).ready(function(){
+   
+   $('#sim_time_btn').load("/simbutton.php");
+   setInterval(function() {
+            $('#sim_time_btn').load("/simbutton.php");
+        }, 100);
+});
+</script>
 <script type="text/javascript">
     $(function() {
-
       //This setTimeout function execute or call automatically when 5 second completed.
       setTimeout(function() {
 			$("#divShow").fadeOut(1000);
