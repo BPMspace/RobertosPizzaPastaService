@@ -64,23 +64,35 @@ while :; do
 		'')
 		for d in */; 
 		do
-			sudo cp -u index.php "$d"; 
-			sudo cp -u service.php "$d"; 
 			sudo cp -u .htaccess "$d"; 
 			sudo cp -u .htpasswd "$d"; 
-			sudo cp -u servicedesk_send.inc.php "$d"; 
-			sudo cp -u servicedesk_order.inc.php "$d"; 
+			sudo cp -u index.php "$d"; 
+			sudo cp -u service.php "$d"; 
+			sudo cp -u service_IN.inc.php "$d"; 
+			sudo cp -u service_OUT.inc.php "$d"; 
+			sudo cp -u kitchen.php "$d"; 
+			sudo cp -u kitchen_IN.inc.php "$d"; 
+			sudo cp -u kitchen_OUT.inc.php "$d"; 
+			sudo cp -u delivery.php "$d"; 
+			sudo cp -u delivery_IN.inc.php "$d"; 
+			sudo cp -u delivery_OUT.inc.php "$d"; 
 			sudo cp -u bodypart2.inc.php "$d"; 
 		done;;
 		'force')
 		for d in */; 
 		do 
-			sudo cp  index.php "$d"; 
-			sudo cp  service.php "$d"; 
 			sudo cp  .htaccess "$d"; 
 			sudo cp  .htpasswd "$d"; 
-			sudo cp  servicedesk_send.inc.php "$d"; 
-			sudo cp  servicedesk_order.inc.php "$d"; 
+			sudo cp  index.php "$d"; 
+			sudo cp  service.php "$d"; 
+			sudo cp  service_IN.inc.php "$d";
+			sudo cp  service_OUT.inc.php "$d"; 
+			sudo cp  kitchen.php "$d"; 
+			sudo cp  kitchen_OUT.inc.php "$d"; 
+			sudo cp  kitchen_IN.inc.php "$d";
+			sudo cp  delivery.php "$d"; 
+			sudo cp  delivery_OUT.inc.php "$d"; 
+			sudo cp  delivery_IN.inc.php "$d";
 			sudo cp  bodypart2.inc.php "$d"; 
 		done;;
 		*)

@@ -7,8 +7,7 @@
 		<input type="hidden" id="sender_php_self" name="sender_php_self" value="<?php echo $_SERVER['PHP_SELF']?>">
 		<input type="hidden" id="sender" name="sender" value="service">
         <input type="radio" name="receiver" value="kitchen" checked="checked">&nbsp;&nbsp;&nbsp;Kitchen&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="receiver" value="driver">&nbsp;&nbsp;&nbsp;Driver&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="receiver" value="service">&nbsp;&nbsp;&nbsp;Service
+        <input type="radio" name="receiver" value="delivery">&nbsp;&nbsp;&nbsp;delivery&nbsp;&nbsp;&nbsp;
         <input class="form-control" type="text" id="subject" name="subject" placeholder="Subject" required >
 		<div class="md-form">
 		<input class="form-control" type="text" id="message" name="message" placeholder="Message" rows="5" required >

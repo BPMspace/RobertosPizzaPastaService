@@ -5,10 +5,9 @@
   <span>Send Order to other department:&nbsp;&nbsp;&nbsp;</span>
   <div class="form-group">
 		<input type="hidden" id="sender_php_self" name="sender_php_self" value="<?php echo $_SERVER['PHP_SELF']?>">
-		<input type="hidden" id="sender" name="sender" value="service">
-        <input type="radio" name="receiver" value="kitchen" checked="checked">&nbsp;&nbsp;&nbsp;Kitchen&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="receiver" value="driver">&nbsp;&nbsp;&nbsp;Driver&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="receiver" value="service">&nbsp;&nbsp;&nbsp;Service
+		<input type="hidden" id="sender" name="sender" value="kitchen">
+        <input type="radio" name="receiver" value="delivery">&nbsp;&nbsp;&nbsp;Delivery&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="receiver" value="service" checked="checked">&nbsp;&nbsp;&nbsp;Service
         <input class="form-control" type="text" id="subject" name="subject" placeholder="Subject" required >
 		<div class="md-form">
 		<input class="form-control" type="text" id="message" name="message" placeholder="Message" rows="5" required >

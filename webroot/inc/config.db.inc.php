@@ -37,8 +37,8 @@ CREATE TABLE IF NOT EXISTS `RPPS`.`TASK` (
   `round` INT NOT NULL ,
   `subject` VARCHAR(255) NOT NULL ,
   `message` TEXT NOT NULL ,
-  `sender` ENUM('service','kitchen','driver') NOT NULL ,
-  `receiver` ENUM('service','kitchen','driver') NOT NULL ,
+  `sender` ENUM('service','kitchen','delivery') NOT NULL ,
+  `receiver` ENUM('service','kitchen','delivery') NOT NULL ,
   `status` ENUM('new','progress','waiting','done') NOT NULL ,
   `timestamp` TIMESTAMP  NOT NULL DEFAULT NOW() ,
   `history` TEXT NOT NULL, PRIMARY KEY (`TASK_ID`)) ENGINE = InnoDB AUTO_INCREMENT=9365463;

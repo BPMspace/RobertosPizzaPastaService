@@ -1,5 +1,5 @@
 <?php
-$ROOM = "Service";
+$ROOM = "Delivery";
 require_once __DIR__ . '/../inc/config.db.inc.php';
 require_once __DIR__ . '/../inc/config.inc.php';
 require_once __DIR__ . '/../inc/config.simstart.inc.php';
@@ -24,7 +24,7 @@ IF ($SIM_FINISHED == "FINISHED") {
    <div class="container">
       <div class="row">
          <div class="col-md-10">
-            <?php require_once __DIR__ . '/service_IN.inc.php';?>
+            <?php require_once __DIR__ . '/delivery_IN.inc.php';?>
          </div>
          <div class="col-md-2">
             <?php require_once __DIR__ . '/../inc/kpi_small.inc.php';?>
@@ -32,7 +32,7 @@ IF ($SIM_FINISHED == "FINISHED") {
       </div>
       <div class="row">
          <div class="col-md-12 top-buffer_60">
-            <?php require_once __DIR__ . '/service_OUT.inc.php';?>
+            <?php require_once __DIR__ . '/delivery_OUT.inc.php';?>
          </div>
       </div>
       <div class="row">

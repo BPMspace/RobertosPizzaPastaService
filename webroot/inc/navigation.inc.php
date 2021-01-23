@@ -4,7 +4,7 @@
 	  <div>
          <h4 class="subline">Robertos Pizza &amp; Pasta Service - <span class= "font_orange">Prozess-Simulation</span></h4>
          <span class="one_line">
-			<div id="sim_time_btn" class="one_line"></div><?php echo $TEAM_NUMBER_BUTTON?>
+			<?php echo $TEAM_NUMBER_BUTTON?><div id="sim_time_btn" class="one_line"></div>
          </span>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
