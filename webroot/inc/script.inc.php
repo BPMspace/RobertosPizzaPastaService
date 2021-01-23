@@ -14,7 +14,7 @@
 <script src="/js/scrollax.min.js"></script>
 <script src="https://meet.jit.si/external_api.js"></script>
 <script>
-/*if (document.addEventListener) {
+if (document.addEventListener) {
   document.addEventListener('contextmenu', function(e) {
     alert("Pizza Sim Rule violation"); //here you draw your own menu
     e.preventDefault();
@@ -25,7 +25,7 @@
     window.event.returnValue = false;
   });
 }
-*/
+
 </script>
 <script>
             var options = {
@@ -56,25 +56,25 @@ $(document).ready(function(){
     $(function() {
       //This setTimeout function execute or call automatically when 5 second completed.
       setTimeout(function() {
-			$("#divShow").fadeOut(1000);
-			}, 20000);
+			$("#divShow").fadeOut(100);
+			}, <?php echo $DIFF_BETWEEN_ORDERS ?>);
 			
 	  $("#btnShow").attr("disabled", "disabled");
         setTimeout(function() {
             $("#btnShow").removeAttr("disabled");      
-        }, 20000);
+        }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
 	  
       $('#btnShow').click(function() {
 		$('.order').css('background-image', '');
 		$('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
 		$('#divShow').show();
 		setTimeout(function() {
-		  $("#divShow").fadeOut(1000);
-		}, 20000);
+		  $("#divShow").fadeOut(100);
+		}, <?php echo $DIFF_BETWEEN_ORDERS ?>);
 		$("#btnShow").attr("disabled", "disabled");
         setTimeout(function() {
             $("#btnShow").removeAttr("disabled");      
-        }, 20000);
+        }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
       });
     });
 </script>

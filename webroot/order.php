@@ -73,14 +73,9 @@ while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
 				}
 	}
 if ($count == 0) {
-		header("Content-type: image/png");  
-		$image= imagecreate(800,300); 
-		$background = imagecolorallocate($image,100,100,100); 
-		$color_white= imagecolorallocate($image,255,255,255); 
-		$color_red= imagecolorallocate($image,254,0,0); 
-		imagefill($image,0,0,$background);  
-		imagestring($image,5,80,80,"no more orders today",$color_red);
-		imagepng($image);
+	header("Content-type: image/png");
+	echo file_get_contents('images/chiuso.png') ;
+	die();
 }
 ?>
 

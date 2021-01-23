@@ -9023,10 +9023,12 @@ textarea.form-control {
 
 .order {
   margin-top: 30px;
+  margin-bottom: 30px;
   width: 700px;
   height: 525px;
   background-image: url("/order.php?time");
   background-color: #323232;
+  background-size: 700px 525px !important;
 }
 
 .fixed_order{
@@ -9045,12 +9047,9 @@ textarea.form-control {
 
 .width_hight_50x10 {
   min-width: 50px;
-  in-height: 10px;
+  min-height: 10px;
 }
 
-.pizza_XXL img {
-    width: 500px !important;
-}
 
 #sim_time_btn {
 white-space:nowrap;

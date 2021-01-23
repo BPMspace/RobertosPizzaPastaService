@@ -6,7 +6,7 @@
          <p class="mb-4 mb-md-5">Pizza ipsum dolor amet mayo in melted cheese chicken wing est deserunt in bacon burnt mouth ea laboris laborum onions. Nulla quis minim commodo ut meatball meatball eiusmod. Pizza roll in sauteed onions, broccoli voluptate large aute stuffed crust buffalo sauce ut. Eiusmod garlic sauce ham bacon & tomato, quis large onions. Adipisicing garlic sauce esse meat lovers.</p>
       </div>
       <div class="col-md-6 ftco-animate">
-         <img src="images/bg_1.png" class="img-fluid pizza_XXL" alt="">
+         <img src="images/bg_1.png" style="width: 200%" class="img-fluid pizza_XXL" alt="">
       </div>
    </div>
 </div>

@@ -18,43 +18,43 @@ IF ($SIM_FINISHED == "FINISHED") {
          ?>
 </head>
 <body>
-      <?php require_once __DIR__ . '/../inc/navigation.inc.php'; ?> 
-        <section class="ftco-appointment">
-           <div class="overlay"></div>
-           <div class="container-fluid">
-              <div class="row">
-                 <div class="col-md-10 fixed_order">
-                    <?php require_once __DIR__ . '/servicedesk_order.inc.php';?>
-                 </div>
-                 <div class="col-md-2">
-                    <?php require_once __DIR__ . '/../inc/kpi_small.inc.php';?>
-                 </div>
-              </div>
-			  <div class="row">
-              <div class="col-md-12">
-                 <?php require_once __DIR__ . '/servicedesk_send.inc.php';?>
-              </div>
-              </div>
-			  <div class="row">
-                 <div class="col-md-12">
-                 <div id="meeting" class="fixed_meeting top-buffer_30"></div>
-                 </div>
-              </div>
-			  <div class="row">
-			  <div class="col-md-12">
-                 <div><img class="img-responsive" src="/images/RPPS_MAP.png" alt="Pizza Simulation"></div>
-              </div>
-              </div>
-			  <div class="row">
-			  <div class="col-md-12">
-				<?php require_once __DIR__ . '/../inc/menu.inc.php';?>
-              </div>
-			  </div>
-			  
-           </div>
-        </section>
-
+<?php require_once __DIR__ . '/../inc/navigation.inc.php'; ?> 
+<section class="ftco-appointment">
+   <div class="overlay"></div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-10">
+            <?php require_once __DIR__ . '/servicedesk_order.inc.php';?>
+         </div>
+         <div class="col-md-2">
+            <?php require_once __DIR__ . '/../inc/kpi_small.inc.php';?>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 top-buffer_60">
+            <?php require_once __DIR__ . '/servicedesk_send.inc.php';?>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 top-buffer_60">
+            <div id="meeting" class="fixed_meeting"></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12 top-buffer_60 justify-content-center">
+            <div><img class="img-responsive justify-content-center" src="/images/RPPS_MAP.png" alt="Pizza Simulation"></div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <?php require_once __DIR__ . '/../inc/menu.inc.php';?>
+         </div>
+      </div>
+   </div>
+</section>
 <?php require_once __DIR__ . '/../inc/script.inc.php';?>
 </body>
 </html>
+
+
 
