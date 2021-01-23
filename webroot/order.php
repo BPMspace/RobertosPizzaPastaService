@@ -9,12 +9,14 @@ $TEMPERATURE = $TEMPERATURE+mt_rand(-2,+3);
 putenv("TEMPERATURE=");
 putenv("HUMIDITY="$HUMIDITY); 
 */
-IF ($SIM_STARTED == "NOT STARTED") {
+
+IF ($SIM_STATUS == "NOT STARTED") {
 	header("Content-type: image/png");
 	echo file_get_contents('images/aperto.png') ;
 	die();
 }
-IF ($SIM_STARTED == "FINISHED") {
+
+IF ($SIM_STATUS == "FINISHED") {
 	header("Content-type: image/png");
 	echo file_get_contents('images/chiuso.png') ;
 	die();

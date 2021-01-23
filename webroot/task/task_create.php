@@ -16,9 +16,10 @@ $sender_php_self=$sanitized['sender_php_self'];
 $sender=$sanitized['sender'];
 $sub=$sanitized['subject'];
 $mes=$sanitized['message'];
+$receiver=$sanitized['receiver'];
 
 try {
-$query = $conn->prepare("INSERT INTO `TASK` (`round`, `subject`, `message`, `sender`, `receiver`, `status`, history ) VALUES ('".$SIMULATION_ROUND."','".$sub."','".$mes."', '".$sender."', 'kitchen', 'new', 'created at simulationtime ".$SIMULATION_TIME."');");
+$query = $conn->prepare("INSERT INTO `TASK` (`round`, `subject`, `message`, `sender`, `receiver`, `status`, history ) VALUES ('".$SIMULATION_ROUND."','".$sub."','".$mes."', '".$sender."', '".$receiver."', 'new', 'created at simulationtime ".$SIMULATION_TIME."');");
 $query->execute();
 }
 catch (PDOException $e) {
