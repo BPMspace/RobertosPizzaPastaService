@@ -4,6 +4,7 @@
 	  <div>
          <h4>
             <?php echo $TEAM_NUMBER_BUTTON?>
+			<?php echo $SIMULATION_TIME_BUTTON?>
          </h4>
          <h4 class="subline">Robertos Pizza &amp; Pasta Service - <span class= "font_orange">Prozess-Simulation</span></h4>
       </div>

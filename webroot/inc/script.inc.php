@@ -24,9 +24,11 @@
     window.event.returnValue = false;
   });
 }
-        </script>
-        <script src="https://meet.jit.si/external_api.js"></script>
-        <script>
+</script>
+
+<script src="https://meet.jit.si/external_api.js"></script>
+
+<script>
             var options = {
                 roomName: "Pizza SIM Team <?php echo $TEAM_NUMBER ?> - <?php echo $ROOM ?> - Round <?php echo $SIMULATION_ROUND ?>",
                 width: 700,
@@ -41,34 +43,32 @@
 					TOOLBAR_BUTTONS: ['microphone', 'camera']}
             }
             var api = new JitsiMeetExternalAPI("meet.jit.si", options);
-        </script>
+</script>
+
 <script type="text/javascript">
     $(function() {
 
       //This setTimeout function execute or call automatically when 5 second completed.
       setTimeout(function() {
-        $("#divShow").fadeOut(1000);
-      }, 20000);
-	  $('#btnShow').hide();
-		setTimeout(function() {
-          $("#btnShow").show();
+			$("#divShow").fadeOut(1000);
+			}, 20000);
+			
+	  $("#btnShow").attr("disabled", "disabled");
+        setTimeout(function() {
+            $("#btnShow").removeAttr("disabled");      
         }, 20000);
-
+	  
       $('#btnShow').click(function() {
 		$('.order').css('background-image', '');
 		$('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
 		$('#divShow').show();
-		$('#btnShow').hide();
 		setTimeout(function() {
-          $("#btnShow").show();
-        }, 21000);
-		
-
-        //This setTimeout function execute when click on show div buton and hide automatically.
+		  $("#divShow").fadeOut(1000);
+		}, 20000);
+		$("#btnShow").attr("disabled", "disabled");
         setTimeout(function() {
-          $("#divShow").fadeOut(1000);
+            $("#btnShow").removeAttr("disabled");      
         }, 20000);
-
       });
     });
 </script>

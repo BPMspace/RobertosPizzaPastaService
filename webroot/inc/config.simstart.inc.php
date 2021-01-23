@@ -3,7 +3,7 @@
    $SIMULATION_ROUND = 3;
    date_default_timezone_set("Europe/Berlin");
    $DIFF_BETWEEN_ORDERS =1000; // miliseconds > 30 sekunden = 30000
-   $SIMULATION_TIME_START = mktime(17,57	, 02, 1, 22, 2021);
+   $SIMULATION_TIME_START = mktime(10,38, 02, 1, 23, 2021);
    $SIMULATION_TIME_END = $SIMULATION_TIME_START+1200; //20 MIN = 1200 seconds
    $SIM_STARTED = ($SIMULATION_TIME_START < strtotime('now')) ? "STARTED" : "NOT STARTED";
    $SIM_FINISHED = ($SIMULATION_TIME_END < strtotime('now')) ? "FINISHED" : "NOT FINISHED";
@@ -31,6 +31,6 @@
    $TEAM_NUMBER_BUTTON =
 			"<div class=\"btn team".$TEAM_NUMBER." btn-lg\">TEAM: ".$TEAM_NUMBER." Round: ". $SIMULATION_ROUND. " User: ".$USER."</div>";
    $SIMULATION_TIME_BUTTON =
-			"<div class=\"btn btn-lg ".$SIM_STATUS_CLASS."\">Start/Finish ".date("H:i:s",$SIMULATION_TIME_START)."/".date("H:i:s",$SIMULATION_TIME_END)." - ".$SIM_STATUS."</div>";
+			"<div id= \"sim_time_btn\" class=\"btn btn-lg ".$SIM_STATUS_CLASS."\">Start/Finish ".date("H:i:s",$SIMULATION_TIME_START)."/".date("H:i:s",$SIMULATION_TIME_END)." - ".$SIM_STATUS."</div>";
    
 ?>

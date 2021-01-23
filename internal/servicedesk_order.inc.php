@@ -6,7 +6,6 @@
            <input class="btn btn-warning top-buffer_30" type="button" id="btnShow" value="Check for new order" />
          </div>
          <div class="fonts" id="divShow">
-			   <?php echo $SIMULATION_TIME_BUTTON?>
                <div class="order"></div>
          </div>
       </div>
