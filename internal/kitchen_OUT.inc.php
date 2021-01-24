@@ -1,6 +1,6 @@
 <h3 class="mb-3">Send Oder to Departement</h3>
 
-<form action="/task/task_create.php"  method="POST" class="appointment-form form-horizontal">
+<form class="appointment-form form-horizontal">
 
   <span>Send Order to other department:&nbsp;&nbsp;&nbsp;</span>
   <div class="form-group">
@@ -14,5 +14,5 @@
         <label for="message">&nbsp;&nbsp;OrderNumber - Customer - Order - Street -  Temperature - Humidity</label>
 		</div>
   </div>
-  <input type="submit" value="Submit">
+  <input type="submit" value="submit">
 </form> 

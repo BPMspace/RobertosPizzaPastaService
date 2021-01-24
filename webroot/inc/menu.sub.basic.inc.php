@@ -37,12 +37,12 @@
                 echo '<h3><span>'.$row['name'].'</span></h3>';
                 echo '<span class="price">N/A</span>';
                 echo '</div><div class="d-block"><p>'.$row['ingredients'];
-				echo (($INTERNAL == true) ? $row['weight'].' g' : '');
+				echo (($INTERNAL == true) ? $row['weight'].' g' : 'ERRORE');
 				echo '</p></div>';
                 echo '</div></div></div>';
             } ?>
             </div>
         </div>
-        <div class="col-md-2">.</div>
+        <div class="col-md-2"></div>
 
       </div>

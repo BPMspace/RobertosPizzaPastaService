@@ -5,6 +5,5 @@
 	$USER = $_SESSION['REMOTE_USER'];
 	$PHP_SELF = $_SERVER['PHP_SELF'];
 	$INTERNAL = ((strpos($PHP_SELF, 'internal') == false) ? false : true);
-
-
+	$SIM_GUID=md5($SIM_SALT.$TEAM_NUMBER.$SIMULATION_ROUND);
 ?>

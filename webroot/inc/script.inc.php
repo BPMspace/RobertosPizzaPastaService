@@ -1,3 +1,5 @@
+
+
 <script src="/js/jquery.min.js"></script>
 <script src="/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="/js/popper.min.js"></script>
@@ -13,71 +15,110 @@
 <script src="/js/jquery.timepicker.min.js"></script>
 <script src="/js/scrollax.min.js"></script>
 <script src="https://meet.jit.si/external_api.js"></script>
-<script>
-if (document.addEventListener) {
-  document.addEventListener('contextmenu', function(e) {
-    alert("Pizza Sim Rule violation"); //here you draw your own menu
-    e.preventDefault();
-  }, false);
-} else {
-  document.attachEvent('oncontextmenu', function() {
-    alert("Pizza Sim Rule violation");
-    window.event.returnValue = false;
-  });
-}
-
+<script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
+<script type="text/javascript">
+   hotkeys('ctrl+c,ctrl+v,ctrl+f,ctrl+s,', function (event, handler){
+     switch (handler.key) {
+       case 'ctrl+c': alert('Pizza Sim Rule violation- Roberto is wachting you!');
+         break;
+       case 'ctrl+v': alert('Pizza Sim Rule violation- Roberto is wachting you!');
+         break;
+       case 'ctrl+f': alert('Pizza Sim Rule violation- Roberto is wachting you!');
+         break;
+       default: alert('Pizza Sim Rule violation- Roberto is wachting you!');
+     }
+   });
 </script>
 <script>
-            var options = {
-                roomName: "Pizza SIM Team <?php echo $TEAM_NUMBER ?> - <?php echo $ROOM ?> - Round <?php echo $SIMULATION_ROUND ?>",
-                width: 700,
-                height: 525,
-                parentNode: document.querySelector('#meeting'),
-                configOverwrite: {prejoinPageEnabled: false, startScreenSharing: false, localRecording: false, startWithVideoMuted: false},
-				userInfo: {
-						displayName: '<?php echo $USER ?>'
-				},
-                interfaceConfigOverwrite: {
-					SHOW_CHROME_EXTENSION_BANNER: false,
-					TOOLBAR_BUTTONS: ['microphone', 'camera']}
-            }
-            var api = new JitsiMeetExternalAPI("meet.jit.si", options);
+   if (document.addEventListener) {
+     document.addEventListener('contextmenu', function(e) {
+       alert("Pizza Sim Rule violation- Roberto is wachting you!");
+       e.preventDefault();
+     }, false);
+   } else {
+     document.attachEvent('oncontextmenu', function() {
+       alert("Pizza Sim Rule violation- Roberto is wachting you!");
+       window.event.returnValue = false;
+     });
+     
+   }
 </script>
 <script>
-$(document).ready(function(){
-   
-   $('#sim_time_btn').load("/simbutton.php");
-   setInterval(function() {
-            $('#sim_time_btn').load("/simbutton.php");
-        }, 100);
-});
+   var options = {
+       roomName: "Pizza SIM Team <?php echo $TEAM_NUMBER ?> - <?php echo $ROOM ?> - Round <?php echo $SIMULATION_ROUND ?><?php echo $SIM_GUID ?>",
+       width: 700,
+       height: 525,
+       parentNode: document.querySelector('#meeting'),
+       configOverwrite: {prejoinPageEnabled: false, startScreenSharing: false, localRecording: false, startWithVideoMuted: false},
+   userInfo: {
+   displayName: '<?php echo $USER ?>'
+   },
+       interfaceConfigOverwrite: {
+   SHOW_CHROME_EXTENSION_BANNER: false,
+   TOOLBAR_BUTTONS: ['allow','microphone', 'camera']}
+   }
+   var api = new JitsiMeetExternalAPI("meet.jit.si", options);
+</script>
+<script>
+   $(document).ready(function(){
+      
+      $('#sim_time_btn').load("/simbutton.php");
+      setInterval(function() {
+               $('#sim_time_btn').load("/simbutton.php");
+           }, 100);
+      
+      if (navigator.userAgent.indexOf("Firefox") < 0) {
+                   alert("ONLY TESTED WITH FIREFOX - Please don't use anything else!");
+               }
+   });
 </script>
 <script type="text/javascript">
-    $(function() {
-      //This setTimeout function execute or call automatically when 5 second completed.
-      setTimeout(function() {
-			$("#divShow").fadeOut(100);
-			}, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-			
-	  $("#btnShow").attr("disabled", "disabled");
-        setTimeout(function() {
-            $("#btnShow").removeAttr("disabled");      
-        }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-	  
-      $('#btnShow').click(function() {
-		$('.order').css('background-image', '');
-		$('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
-		$('#divShow').show();
-		setTimeout(function() {
-		  $("#divShow").fadeOut(100);
-		}, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-		$("#btnShow").attr("disabled", "disabled");
-        setTimeout(function() {
-            $("#btnShow").removeAttr("disabled");      
-        }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-      });
-    });
+   $(function() {
+     //This setTimeout function execute or call automatically when 5 second completed.
+     setTimeout(function() {
+   $("#divShow").fadeOut(100);
+   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+   
+   $("#btnShow").attr("disabled", "disabled");
+       setTimeout(function() {
+           $("#btnShow").removeAttr("disabled");      
+       }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+   
+     $('#btnShow').click(function() {
+   $('.order').css('background-image', '');
+   $('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
+   $('#divShow').show();
+   setTimeout(function() {
+   $("#divShow").fadeOut(100);
+   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+   $("#btnShow").attr("disabled", "disabled");
+       setTimeout(function() {
+           $("#btnShow").removeAttr("disabled");      
+       }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+     });
+   });
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="/js/google-map.js"></script>
+<script>
+   $(function () {
+   
+   $('form').on('submit', function (e) {
+   
+   e.preventDefault();
+   
+   $.ajax({
+   type: 'post',
+   url: '/task_create.php',
+   data: $('form').serialize(),
+   success: function () {
+   alert('Task was created!');
+   $("#subject").val("");
+   $("#message").val("");
+   }
+   });
+   
+   });
+   
+   });
+</script>
 <script src="/js/main.js"></script>
+

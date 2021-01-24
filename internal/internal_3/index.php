@@ -16,7 +16,7 @@
       <?php require_once __DIR__ . '/../inc/navigation.inc.php'; ?> 
       <section class="ftco-appointment">
          <div class="overlay"></div>
-         <div class="container-fluid">
+         <div class="container">
             <div class="row">
                   <div class="col-md-3 ftco-animate fadeInUp ftco-animated">
                      <div class="blog-entry">
@@ -50,7 +50,6 @@
                         <p>As Driver you have to ...</p>
                      </div>
                   </div>
-               </div>
                </div>
          <div class="row">
             <?php require_once __DIR__ . '/bodypart2.inc.php';?>

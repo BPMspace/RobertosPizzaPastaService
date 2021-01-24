@@ -46,12 +46,18 @@ $count = $query->rowCount();
 // cut at space https://stackoverflow.com/questions/38536953/with-php-substr-how-can-i-find-the-previous-whitespace-instead-of-the-following
 
 while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
+			//$result_order = $result['order'];
+			
+			$rand_text_array = array("the same again", "like last time", "you know it", "like always", "the usual", "same procedure as last time");
+			//$result_order = $result['order'];
+			$result_order = ($result['hidden'] == '1') ? $rand_text_array[rand(0,5)] : $result['order'];
+			
 			header("Content-type: image/png"); 
-			$str1= "Name: ".$result['customer']; 
-			$str2= "Adress: ".$result['adress']; 
-			$str3= "Order: ".substr($result['order'], 0, 30); 
-			$str4= "       ".substr($result['order'], 30, 60); ; 
-			$str5= "       ".substr($result['order'], 60, 90); ; 
+			$str1= "Name:      ".$result['customer']; 
+			$str2= "Adress:    ".$result['adress']; 
+			$str3= "Order:     ".substr($result_order, 0, 30); 
+			$str4= "           ".substr($result_order, 30, 60); 
+			$str5= "           ".substr($result_order, 60, 90); 
 			$rand= rand(1924,934465); 
 			$image= imagecreate(700,525); 
 			$background = imagecolorallocate($image,50,50,50); 
@@ -63,7 +69,7 @@ while ($result = $query->fetch(PDO::FETCH_ASSOC)) {
 			imagestring($image,5,100,65,$str3,$color_white); 
 			imagestring($image,5,100,85,$str4,$color_white); 
 			imagestring($image,5,100,105,$str5,$color_white); 
-			imagestring($image,1,90,200,$rand ,$color_red);
+			imagestring($image,1,400,400,$SIM_GUID.$rand,$color_red);
 			imagepng($image);
 
 			try {
