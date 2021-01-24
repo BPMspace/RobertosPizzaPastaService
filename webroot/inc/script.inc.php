@@ -1,5 +1,3 @@
-
-
 <script src="/js/jquery.min.js"></script>
 <script src="/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="/js/popper.min.js"></script>
@@ -67,6 +65,11 @@
                $('#sim_time_btn').load("/simbutton.php");
            }, 100);
       
+      $('#task_table').load("/task_read.php?");
+      setInterval(function() {
+               $('#task_table').load("/task_read.php",{room: "<?php echo $ROOM ?>"});
+           }, 100);
+      
       if (navigator.userAgent.indexOf("Firefox") < 0) {
                    alert("ONLY TESTED WITH FIREFOX - Please don't use anything else!");
                }
@@ -101,18 +104,38 @@
 <script>
    $(function () {
    
-   $('form').on('submit', function (e) {
+   $('#task_create').on('submit', function (e) {
    
    e.preventDefault();
    
    $.ajax({
    type: 'post',
    url: '/task_create.php',
-   data: $('form').serialize(),
+   data: $('#task_create').serialize(),
    success: function () {
    alert('Task was created!');
    $("#subject").val("");
    $("#message").val("");
+   }
+   });
+   
+   });
+   
+   });
+</script>
+<script>
+   $(function () {
+   
+   $('#task_update').on('submit', function (e) {
+   
+   e.preventDefault();
+   
+   $.ajax({
+   type: 'post',
+   url: '/task_update.php',
+   data: $('#task_update').serialize(),
+   success: function () {
+   alert('Task was set to done!');
    }
    });
    

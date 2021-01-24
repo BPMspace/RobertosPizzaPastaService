@@ -20,7 +20,10 @@ IF ($SIM_FINISHED == "FINISHED") {
 <body>
 <?php require_once __DIR__ . '/../inc/navigation.inc.php'; ?> 
 <section class="ftco-appointment">
-   <div class="overlay"></div>
+   <div class="heading-section text-center ftco-animate">
+      <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+      <h2 class="mb-4"><br/><?php echo $ROOM;?></h2>
+   </div>
    <div class="container">
       <div class="row">
          <div class="col-md-10">

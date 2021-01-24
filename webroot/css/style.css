@@ -9071,6 +9071,12 @@ white-space:nowrap;
     overflow: scroll;
 }
 
+#task_table {
+    min-width: 700px !important;
+    height: 350px !important;
+    overflow: auto;
+}
+
 /*
 div[class*=col-] {border: 10px solid #FFF;}
 div[class*=col-]:first-child {border: 3px solid #F00;}
