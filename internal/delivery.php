@@ -38,6 +38,16 @@ IF ($SIM_FINISHED == "FINISHED") {
             <?php require_once __DIR__ . '/delivery_OUT.inc.php';?>
          </div>
       </div>
+	  <div class="row">
+		<div class="col-md-4 top-buffer_60">
+			 <div class="top-buffer_30">
+				   <div id="order_table"></div>
+			 </div>
+		</div>
+		<div class="col-md-4 top-buffer_60">
+			<div></div>
+		</div>
+      </div>
       <div class="row">
          <div class="col-md-12 top-buffer_60">
             <?php require_once __DIR__ . '/bodypart2.inc.php';?>

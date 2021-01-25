@@ -1,6 +1,5 @@
-<h3 class="mb-3">Send Oder to Departement</h3>
+<h3 class="mb-3">Send Order to other internal Departement</h3>
 <form id="task_create" class="appointment-form form-horizontal">
-  <span>Send Order to other department:&nbsp;&nbsp;&nbsp;</span>
   <div class="form-group">
 		<input type="hidden" id="simguid" name="simguid" value="<?php echo $SIM_GUID?>">
 		<input type="hidden" id="sender" name="sender" value="kitchen">

@@ -57,6 +57,7 @@
    TOOLBAR_BUTTONS: ['allow','microphone', 'camera']}
    }
    var api = new JitsiMeetExternalAPI("meet.jit.si", options);
+  
 </script>
 <script>
    $(document).ready(function(){
@@ -65,9 +66,14 @@
                $('#sim_time_btn').load("/simbutton.php");
 				}, 1000);
       
-      $('#task_table').load("/task_read.php?");
+      $('#task_table').load("/task_read.php");
       setInterval(function() {
                $('#task_table').load("/task_read.php",{room: "<?php echo $ROOM ?>"});
+				}, 1000);
+       
+      $('#order_table').load("/order_read.php");
+      setInterval(function() {
+               $('#order_table').load("/order_read.php");
 				}, 1000);
        
       $('#customer').DataTable({
@@ -85,6 +91,13 @@
         } );
     
      $('#task').DataTable({
+        "paging":   false,
+        "searching": true,
+        "info":     false,
+        "ordering": true
+        } );
+		
+      $('#order').DataTable({
         "paging":   false,
         "searching": true,
         "info":     false,

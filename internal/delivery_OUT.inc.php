@@ -1,7 +1,5 @@
-<h3 class="mb-3">Deliver to Customer</h3>
+<h3 class="mb-3">Send Order to other internal Departement</h3>
 <form id="task_create" class="appointment-form form-horizontal">
-
-  <span>Deliver to Customer&nbsp;&nbsp;&nbsp;</span>
   <div class="form-group">
 		<input type="hidden" id="simguid" name="simguid" value="<?php echo $SIM_GUID?>">
 		<input type="hidden" id="sender" name="sender" value="delivery">
@@ -14,3 +12,4 @@
 		</div>
   </div>
   <input type="submit" value="Submit">
+</form> 
