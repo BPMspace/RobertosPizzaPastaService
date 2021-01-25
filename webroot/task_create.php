@@ -12,7 +12,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sender_php_self=$sanitized['sender_php_self'];
 $sender=$sanitized['sender'];
 $sub=$sanitized['subject'];
 $mes=$sanitized['message'];

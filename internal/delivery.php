@@ -44,16 +44,30 @@ IF ($SIM_FINISHED == "FINISHED") {
 				   <div id="order_table"></div>
 			 </div>
 		</div>
-		<div class="col-md-4 top-buffer_60">
-			<div></div>
+		<div class="col-md-8 top-buffer_60">
+
+				<form id="order_update" class="appointment-form form-horizontal">
+				<div class="form-group">
+				<input type="hidden" id="simguid" name="simguid" value="<?php echo $SIM_GUID?>">
+				<input type="hidden" id="sender" name="sender" value="delivery">
+				<input class="form-control" type="text" id="order_id" name="order_id" placeholder="order_id" required >
+				<input class="form-control" type="text" id="price" name="price" placeholder="price" required >
+				<input class="form-control" type="text" id="weight" name="weight" placeholder="weight" required >
+				&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="wine">
+				<label class="form-check-label" for="wine">&nbsp;&nbsp;Wine?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="area">
+				<label class="form-check-label" for="area">&nbsp;&nbsp;Area?&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				</div>
+				<input type="submit" value="submit">
+				</form>
 		</div>
-      </div>
-      <div class="row">
+    </div>
+    <div class="row">
          <div class="col-md-12 top-buffer_60">
             <?php require_once __DIR__ . '/bodypart2.inc.php';?>
          </div>
-      </div>
-     </div>
+    </div>
+   </div>
 </section>
 <?php require_once __DIR__ . '/../inc/script.inc.php';?>
 </body>

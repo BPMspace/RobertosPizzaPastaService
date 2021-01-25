@@ -178,5 +178,30 @@
    
    });
 </script>
+<script>
+   $(function () {
+   
+   $('#order_update').on('submit', function (e) {
+   
+   e.preventDefault();
+   
+   $.ajax({
+   type: 'post',
+   url: '/order_update.php',
+   data: $('#order_update').serialize(),
+   success: function () {
+   alert('Order was delivered!');
+   $("#order_id").val("");
+   $("#wine").val("");
+   $("#area").val("");
+   $("#price").val("");
+   $("#weight").val("");
+   }
+   });
+   
+   });
+   
+   });
+</script>
 <script src="/js/main.js"></script>
 
