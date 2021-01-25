@@ -4,7 +4,7 @@
    
    date_default_timezone_set("Europe/Berlin");
    $DIFF_BETWEEN_ORDERS =30000; // miliseconds > 30 sekunden = 30000
-   $SIMULATION_TIME_START = mktime(19,18,33, 1, 24, 2021);
+   $SIMULATION_TIME_START = mktime(07,18,33, 1, 25, 2021);
    $SIMULATION_TIME_END = $SIMULATION_TIME_START+12000; //20 MIN = 1200 seconds
    $SIM_STARTED = ($SIMULATION_TIME_START < strtotime('now')) ? "STARTED" : "NOT STARTED";
    $SIM_FINISHED = ($SIMULATION_TIME_END < strtotime('now')) ? "FINISHED" : "NOT FINISHED";

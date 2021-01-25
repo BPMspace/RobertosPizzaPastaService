@@ -21,7 +21,7 @@ catch (PDOException $e) {
   echo $e->getMessage();
 }
 
-echo "<table id=\"street\" class=\"table table-striped table-responsive-md\">
+echo "<table id=\"task\" class=\"table table-striped table-responsive-md\">
    <thead class=\"thead-dark\">
      <tr>
        <th scope=\"col\" title=\"Sender\">Sender</th>

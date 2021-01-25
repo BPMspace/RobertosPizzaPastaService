@@ -15,5 +15,6 @@
 <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
 <link rel="stylesheet" href="/css/jquery.timepicker.css">
 <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="/css/icomoon.css">
 <link rel="stylesheet" href="/css/style.css">

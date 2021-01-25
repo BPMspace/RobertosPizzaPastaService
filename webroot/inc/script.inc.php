@@ -13,6 +13,7 @@
 <script src="/js/jquery.timepicker.min.js"></script>
 <script src="/js/scrollax.min.js"></script>
 <script src="https://meet.jit.si/external_api.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 <script src="https://unpkg.com/hotkeys-js/dist/hotkeys.min.js"></script>
 <script type="text/javascript">
    hotkeys('ctrl+c,ctrl+v,ctrl+f,ctrl+s,', function (event, handler){
@@ -59,17 +60,38 @@
 </script>
 <script>
    $(document).ready(function(){
-      
       $('#sim_time_btn').load("/simbutton.php");
       setInterval(function() {
                $('#sim_time_btn').load("/simbutton.php");
-           }, 100);
+				}, 1000);
       
       $('#task_table').load("/task_read.php?");
       setInterval(function() {
                $('#task_table').load("/task_read.php",{room: "<?php echo $ROOM ?>"});
-           }, 100);
+				}, 1000);
+       
+      $('#customer').DataTable({
+        "paging":   false,
+        "searching": true,
+        "info":     false,
+        "ordering": true
+        } );
+
+      $('#street').DataTable({
+        "paging":   false,
+        "searching": false,
+        "info":     false,
+        "ordering": false
+        } );
+    
+     $('#task').DataTable({
+        "paging":   false,
+        "searching": true,
+        "info":     false,
+        "ordering": true
+        } );
       
+    
       if (navigator.userAgent.indexOf("Firefox") < 0) {
                    alert("ONLY TESTED WITH FIREFOX - Please don't use anything else!");
                }

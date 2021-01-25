@@ -9077,6 +9077,18 @@ white-space:nowrap;
     overflow: auto;
 }
 
+.table-striped>tbody>tr:nth-child(odd)>td,
+tr{
+    background-color:#000;
+	color: var(--orange);
+}
+
+.table-striped>tbody>tr:nth-child(even)>td,
+tr{
+    background-color:#616161;
+	color: var(--white);
+	
+}
 /*
 div[class*=col-] {border: 10px solid #FFF;}
 div[class*=col-]:first-child {border: 3px solid #F00;}

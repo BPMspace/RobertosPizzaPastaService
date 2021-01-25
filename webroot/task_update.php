@@ -12,11 +12,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sender=$sanitized['task_id'];
-$sub=$sanitized['action'];
+$task_id=$sanitized['task_id'];
+$action=$sanitized['action'];
 
 try {
-$query = $conn->prepare("UPDATE `TASK` SET `status` = 'done' WHERE `TASK_ID` = 9365486;");
+$query = $conn->prepare("UPDATE `TASK` SET `status` = '".$action."' WHERE `TASK_ID` = ".$task_id.";");
 $query->execute();
 }
 catch (PDOException $e) {
