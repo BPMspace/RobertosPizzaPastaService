@@ -20,7 +20,7 @@ $weight=$sanitized['weight'];
 
 try {
 //$query = $conn->prepare("UPDATE `ORDER` SET `timestamp_out` = NOW(), `wine` = '".$wine."', `area` = '".$area."', `price` = '".$price."', `weight` = '".$weight."' WHERE `ORDER_ID` = '".$order_id."';");
-$query = $conn->prepare("UPDATE `ORDER` SET `timestamp_out` = NOW() , `price` = '".$price."' , `weight` = '".$weight."' WHERE `ORDER`.`ORDER_ID` = '".$order_id."';");
+$query = $conn->prepare("UPDATE `ORDER` SET `timestamp_out` = NOW() , `price` = REPLACE('".$price."',',','.') , `weight` = '".$weight."' WHERE `ORDER`.`ORDER_ID` = '".$order_id."';");
 $query->execute();
 }
 catch (PDOException $e) {

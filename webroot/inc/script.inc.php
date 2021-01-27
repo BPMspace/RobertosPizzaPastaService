@@ -54,7 +54,7 @@
    },
        interfaceConfigOverwrite: {
    SHOW_CHROME_EXTENSION_BANNER: false,
-   TOOLBAR_BUTTONS: ['allow','microphone', 'camera']}
+   TOOLBAR_BUTTONS: ['allow','microphone', 'camera', 'fullscreen', 'chat']}
    }
    var api = new JitsiMeetExternalAPI("meet.jit.si", options);
   

@@ -50,9 +50,9 @@ IF ($SIM_FINISHED == "FINISHED") {
 				<div class="form-group">
 				<input type="hidden" id="simguid" name="simguid" value="<?php echo $SIM_GUID?>">
 				<input type="hidden" id="sender" name="sender" value="delivery">
-				<input class="form-control" type="text" id="order_id" name="order_id" placeholder="order_id" required >
-				<input class="form-control" type="text" id="price" name="price" placeholder="price" required >
-				<input class="form-control" type="text" id="weight" name="weight" placeholder="weight" required >
+				<span>XXXX</span><input class="form-control" type="text" id="order_id" name="order_id" placeholder="order_id" required>
+				<span>€</span><input class="form-control" type="text" id="price" name="price" placeholder="price" required >
+				<span>gramm</span><input class="form-control" type="text" id="weight" name="weight" placeholder="weight" required >
 				&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="wine">
 				<label class="form-check-label" for="wine">&nbsp;&nbsp;Wine?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 				&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="area">
