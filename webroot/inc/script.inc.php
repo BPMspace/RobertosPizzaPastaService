@@ -112,28 +112,30 @@
 </script>
 <script type="text/javascript">
    $(function() {
-     //This setTimeout function execute or call automatically when 5 second completed.
+     $('.order').css('background-image', 'url(/order.php?time='+Math.random()+')');
+	 
+	 //This setTimeout function execute or call automatically when 5 second completed.
      setTimeout(function() {
-   $("#divShow").fadeOut(100);
-   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-   
-   $("#btnShow").attr("disabled", "disabled");
+		   $("#divShow").fadeOut(100);
+		   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+
+     $("#btnShow").attr("disabled", "disabled");
        setTimeout(function() {
            $("#btnShow").removeAttr("disabled");      
        }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
    
      $('#btnShow').click(function() {
-   $('.order').css('background-image', '');
-   $('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
-   $('#divShow').show();
-   setTimeout(function() {
-   $("#divShow").fadeOut(100);
-   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-   $("#btnShow").attr("disabled", "disabled");
-       setTimeout(function() {
-           $("#btnShow").removeAttr("disabled");      
-       }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
-     });
+		   $('.order').css('background-image', '');
+		   $('.order').css('background-image', 'url(/order.php?time='+Math.random()+')'); 
+		   $('#divShow').show();
+		   setTimeout(function() {
+		   $("#divShow").fadeOut(100);
+		   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+		   $("#btnShow").attr("disabled", "disabled");
+			   setTimeout(function() {
+				   $("#btnShow").removeAttr("disabled");      
+			   }, <?php echo $DIFF_BETWEEN_ORDERS ?>);
+		});
    });
 </script>
 <script>

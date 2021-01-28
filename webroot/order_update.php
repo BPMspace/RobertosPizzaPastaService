@@ -13,8 +13,8 @@ if ($conn->connect_error) {
 }
 
 $order_id=$sanitized['order_id'];
-$wine=$sanitized['wine'];
-$area=$sanitized['area'];
+$wine=1;
+$area=0;
 $price=$sanitized['price'];
 $weight=$sanitized['weight'];
 
