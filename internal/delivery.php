@@ -53,10 +53,10 @@ IF ($SIM_FINISHED == "FINISHED") {
 				<span>XXXX</span><input class="form-control" type="text" id="order_id" name="order_id" placeholder="order_id" required>
 				<span>€</span><input class="form-control" type="text" id="price" name="price" placeholder="price" required >
 				<span>gramm</span><input class="form-control" type="text" id="weight" name="weight" placeholder="weight" required >
-				&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="wine">
-				<label class="form-check-label" for="wine">&nbsp;&nbsp;Wine?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-				&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="area">
-				<label class="form-check-label" for="area">&nbsp;&nbsp;Area?&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="wine" name="wine">
+				&nbsp;Wine?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-check-input" id="area" name="area">
+				&nbsp;Right Area?
 				</div>
 				<input type="submit" value="submit">
 				</form>

@@ -13,14 +13,14 @@ if ($conn->connect_error) {
 }
 
 $order_id=$sanitized['order_id'];
-$wine=1;
-$area=0;
 $price=$sanitized['price'];
 $weight=$sanitized['weight'];
+$wine = (isset($sanitized['wine'])?1:0);
+$area = (isset($sanitized['area'])?1:0);
 
 try {
 //$query = $conn->prepare("UPDATE `ORDER` SET `timestamp_out` = NOW(), `wine` = '".$wine."', `area` = '".$area."', `price` = '".$price."', `weight` = '".$weight."' WHERE `ORDER_ID` = '".$order_id."';");
-$query = $conn->prepare("UPDATE `ORDER` SET `timestamp_out` = NOW() , `price` = REPLACE('".$price."',',','.') , `weight` = '".$weight."' WHERE `ORDER`.`ORDER_ID` = '".$order_id."';");
+$query = $conn->prepare("UPDATE `ORDER` SET `timestamp_out` = NOW() , `price` = REPLACE('".$price."',',','.') , `weight` = '".$weight."', `wine` = '".$wine."', `area` = '".$area."' WHERE `ORDER`.`ORDER_ID` = '".$order_id."';");
 $query->execute();
 }
 catch (PDOException $e) {

@@ -48,14 +48,23 @@
        width: 700,
        height: 525,
        parentNode: document.querySelector('#meeting'),
-       configOverwrite: {prejoinPageEnabled: false, startScreenSharing: false, localRecording: false, startWithVideoMuted: false},
-   userInfo: {
-   displayName: '<?php echo $USER ?>'
-   },
-       interfaceConfigOverwrite: {
-   SHOW_CHROME_EXTENSION_BANNER: false,
-   TOOLBAR_BUTTONS: ['allow','microphone', 'camera', 'fullscreen', 'chat']}
-   }
+       configOverwrite: {
+			prejoinPageEnabled: false, 
+			startScreenSharing: false,
+			localRecording: false,
+			startWithVideoMuted: false,
+			remoteVideoMenu: 
+				{
+					disableKick: true,
+				}
+			},
+		userInfo: {
+		displayName: '<?php echo $USER ?>'
+	},
+	interfaceConfigOverwrite: {
+		SHOW_CHROME_EXTENSION_BANNER: false,
+		TOOLBAR_BUTTONS: ['allow','microphone', 'camera', 'fullscreen', 'chat']}
+	}
    var api = new JitsiMeetExternalAPI("meet.jit.si", options);
   
 </script>

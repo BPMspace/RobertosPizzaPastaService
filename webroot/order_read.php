@@ -13,15 +13,7 @@ if ($conn->connect_error) {
 }
 
 try {
-$query_order = $conn->prepare("SELECT ORDER_ID, customer FROM `ORDER_TEMPLATE` INNER JOIN `ORDER` ON `ORDER_TEMPLATE`.`ORDER_TEMP_ID`=`ORDER`.`ORDER_TEMP_ID` WHERE timestamp_out = `0000-00-00 00:00:00`;");
-$query_order->execute();
-}
-catch (PDOException $e) {
-  echo $e->getMessage();
-}
-
-try {
-$query_order= $conn->prepare("SELECT ORDER_ID, customer FROM `ORDER_TEMPLATE` INNER JOIN `ORDER` ON `ORDER_TEMPLATE`.`ORDER_TEMP_ID`=`ORDER`.`ORDER_TEMP_ID` WHERE timestamp_out = \"0000-00-00 00:00:00\" AND 'round' = ".$SIMULATION_ROUND." ;");
+$query_order = $conn->prepare("SELECT ORDER_ID, customer FROM `ORDER_TEMPLATE` INNER JOIN `ORDER` ON `ORDER_TEMPLATE`.`ORDER_TEMP_ID`=`ORDER`.`ORDER_TEMP_ID` WHERE timestamp_out = \"0000-00-00 00:00:00\" AND `ORDER`.`round` = ".$SIMULATION_ROUND.";");
 $query_order->execute();
 }
 catch (PDOException $e) {
@@ -30,7 +22,7 @@ catch (PDOException $e) {
 
 //$orders = $query_order->fetchAll();
 //print_r($orders);
-
+//exit;
 echo "<table id=\"order\" class=\"table table-striped table-responsive-md\">
    <thead class=\"thead-dark\">
      <tr>
