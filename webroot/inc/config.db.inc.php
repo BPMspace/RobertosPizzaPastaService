@@ -111,26 +111,26 @@ INSERT IGNORE INTO `MENU` (`MENU_ID`, `type`, `name`, `ingredients`, `price`, `w
 (6761, 'Extra', 'Garlic', '', '1.10', 22, '/images/knoblauch.jpg');
 
 INSERT IGNORE INTO `ORDER_TEMPLATE` (`ORDER_TEMP_ID`, `customer`, `adress`, `order`, `hidden`, `area`, `price`, `weight`) VALUES
-(601, 'Andrea', 'via dei Giubbonari/via dei Cestari ', '1 x Pizza Grandiosa with extra Ananas ',0, 1, '0.00', 0),
-(602, 'Isabella', 'via di Sopra/via Milano', '2 X Pizza Margherita & Pasta Aglio & Olio',1, 0, '0.00', 0),
-(603, 'Fausto', 'via del Boschetto/via di Sotto ', '2 x Pizza Salami, 1 x Pizza Funghi and 1 x Pasta Tonno ',0, 1, '0.00', 0),
-(604, 'Gabriella', 'via di Campo Marzio/via di Cantieri ', '1 x Pizza Funghi with extra Mozarella ',0, 1, '0.00', 0),
-(605, 'Marco', '2 X Pizza Margherita & Pasta Aglio & Olio', '2 X Pasta Pesto & 1 X Pasta Aglio & Olio',1, 1, '0.00', 0),
-(606, 'Oriella', 'via dei Delfini/via Milano ', '1 x Pasta Funghi & 2 x Pasta Tonno ',0, 1, '0.00', 0),
-(607, 'Paolo', 'Piazza Verdi/via del la statione ', 'Pasta Pesto, Pasta Tonno & Pasta Aglio & Olio',0, 1, '0.00', 0),
-(608, 'Raffaello', 'via dei Giubbonari/via del la statione ', '2 x Pizza Hawaii, 1 x Pizza Regina and 1 x Pasta Tonno',0, 0, '0.00', 0),
-(609, 'Toni', 'via dei Delfini/via Roma ', '2 x Pizza Salami, 1 x Pizza Funghi and 1 x Pasta Tonno ',0, 1, '0.00', 0),
-(610, 'Claudio', 'via Marmorata/via Tonezza', '1 x Pizza Mista with extra Mozarella ',0, 1, '0.00', 0),
-(611, 'Matteo', 'via dei Giubbonari/Mercato  Generale', '1 X Pizza Margherita With Extra Pepperoni 2 X Pizza Regina With Extra Pepperoni 1 X Pizza Mista And 1 X Pasta Tonno',1, 1, '0.00', 0),
-(612, 'Gina', 'via del Babuino/via di Cantieri', '2 x Pizza Papa with extra Garlic ',0, 1, '0.00', 0),
-(613, 'Gianni', 'via dei Cestari/via Venecia ', '1 x Pasta Tonno & 2 x Pasta Pesto',0, 1, '0.00', 0),
-(614, 'Emilio', 'via di Sotto/via Milano ', '4 x Pizza Grandiosa davon 2 with extra Garlic ',0, 1, '0.00', 0),
-(615, 'Alessandra', 'via Giulia/via Giove ', '1 x Pizza Regina with extra Garlic and 1 x Pasta Aglio & Olio ',0, 1, '0.00', 0),
-(616, 'Juana', 'via Romeo/via dei Cestari', '1 X Pasta Aglio & Olio And 2 X Pasta Pesto With 1 X Extra Basil',1, 1, '0.00', 0),
-(617, 'Nino', 'via del Babuino via Tonezza', '1 X Pizza Pizza Prosciutto With Extra Peperoni 1 X Pizza Regina With Extra Basil And 1 X Pasta Pesto',1, 1, '0.00', 0),
-(618, 'Ottavio', 'via Alberta/via Sistina ', '2 x Pizza Salami with extra Peperoni and 2 x Pasta Pesto ',0, 1, '0.00', 0),
-(619, 'Dino', 'via Marmorata/via Roma ', '2 x Pizza Funghi & Pizza Grandiosa aber vegetarisch !! (nicht vegan) ',0, 1, '0.00', 0),
-(620, 'Gino', 'Piazza Dante/via Bella Elena ', '2 x Pizza Tonno with extra Garlic ',0, 1, '0.00', 0);
+(601, 'Andrea', 'via dei Giubbonari/via dei Cestari ', '1 x Pizza Grandiosa with extra Ananas ',0, 1, '17.79', 645),
+(602, 'Isabella', 'via di Sopra/via Milano', '2 X Pizza Margherita & Pasta Aglio & Olio',1, 1, '19.38', 962),
+(603, 'Fausto', 'via del Boschetto/via di Sotto ', '2 x Pizza Salami, 1 x Pizza Funghi and 1 x Pasta Tonno ',0, 1, '35.37', 1546),
+(604, 'Gabriella', 'via di Campo Marzio/via di Cantieri ', '1 x Pizza Funghi with extra Mozarella ',0, 1, '10.19', 485),
+(605, 'Marco', 'via di Cantieri/via Venecia', '2 X Pasta Pesto & 1 X Pasta Aglio & Olio',1, 1, '21.60', 666),
+(606, 'Oriella', 'via dei Delfini/via Milano ', '1 x Pasta Funghi & 2 x Pasta Tonno ',0, 1, '30.50', 797),
+(607, 'Paolo', 'Piazza Verdi/via Marmorata', 'Pasta Pesto, Pasta Tonno & Pasta Aglio & Olio',0, 0, '0.00', 0),
+(608, 'Raffaello', 'via dei Giubbonari/via del la statione ', '2 x Pizza Hawaii, 1 x Pizza Regina and 1 x Pasta Tonno',0, 1, '43.37', 1627),
+(609, 'Toni', 'via dei Delfini/via Roma ', '2 x Pizza Salami, 1 x Pizza Funghi and 1 x Pasta Tonno ',0, 1, '35.37', 1546),
+(610, 'Claudio', 'via Marmorata/via Tonezza', '1 x Pizza Mista with extra Mozarella ',0, 0, '0.00', 0),
+(611, 'Matteo', 'via dei Giubbonari/Mercato  Generale', '1 X Pizza Margherita With Extra Pepperoni 2 X Pizza Regina With Extra Pepperoni 1 X Pizza Mista And 1 X Pasta Tonno',1, 1, '52.86', 2156),
+(612, 'Gina', 'via del Babuino/via di Cantieri', '2 x Pizza Papa with extra Garlic ',0, 1, '28.18', 950),
+(613, 'Gianni', 'via dei Cestari/via Venecia ', '1 x Pasta Tonno & 2 x Pasta Pesto',0, 1, '25.19', 865),
+(614, 'Emilio', 'via di Sotto/via Milano ', '4 x Pizza Grandiosa 2 with extra Garlic ',0, 1, '66.16', 2512),
+(615, 'Alessandra', 'via Giulia/via Giove ', '1 x Pizza Regina with extra Garlic and 1 x Pasta Aglio & Olio ',0, 0, '0.00', 0),
+(616, 'Juana', 'via Romeo/via dei Cestari', '1 X Pasta Aglio & Olio And 2 X Pasta Pesto With 1 X Extra Basil',1, 1, '22.50', 676),
+(617, 'Nino', 'via del Babuino/via Tonezza', '1 X Pizza Prosciutto With Extra Peperoni 1 X Pizza Regina With Extra Basil And 1 X Pasta Pesto',1, 1, '27.48', 1132),
+(618, 'Ottavio', 'via Alberta/via Sistina ', '2 x Pizza Salami with extra Peperoni and 2 x Pasta Pesto ',0, 1, '33.18', 1304),
+(619, 'Dino', 'via Marmorata/via Roma ', '2 x Pizza Funghi & Pizza Grandiosa aber vegetarisch !! (nicht vegan) ',0, 0, '0.00', 0),
+(620, 'Gino', 'Piazza Dante/via Bella Elena ', '2 x Pizza Tonno with extra Garlic ',0, 0, '0.00', 0);
 
   
   

@@ -4,10 +4,11 @@
    
    date_default_timezone_set("Europe/Berlin");
    $DIFF_BETWEEN_ORDERS =30000; // miliseconds > 30 sekunden = 30000
-   $SIMULATION_TIME_START = mktime(15,37,00, 1, 28, 2021);
-   $SIMULATION_TIME_END = $SIMULATION_TIME_START+20000; //15 MIN = 900 seconds
+   $SIMULATION_TIME_START = mktime(19,15,00, 2, 3, 2021);
+   $SIMULATION_TIME_END = $SIMULATION_TIME_START+9000; //15 MIN = 900 seconds
    $SIM_STARTED = ($SIMULATION_TIME_START < strtotime('now')) ? "STARTED" : "NOT STARTED";
-   $SIM_FINISHED = ($SIMULATION_TIME_END < strtotime('now')) ? "FINISHED" : "NOT FINISHED";
+   $SIM_FINISHED = ($SIMULATION_TIME_END < strtotime('now'))
+   ? "FINISHED" : "NOT FINISHED";
    $SIM_STATUS = "NOT STARTED";
    $SIM_STATUS_CLASS = "btn-outline-secondary";
    IF (($SIM_STARTED == "STARTED") AND ($SIM_FINISHED == "NOT FINISHED")) {
