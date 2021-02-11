@@ -13,9 +13,16 @@ if ($conn->connect_error) {
 }
 
 $sender=$sanitized['sender'];
-$sub=$sanitized['subject'];
-$mes=$sanitized['message'];
 $receiver=$sanitized['receiver'];
+$sub=$sanitized['subject'];
+$sub .="-".$sanitized['subject1'];
+$sub .="-".$sanitized['subject2'];
+$mes=$sanitized['message'];
+$mes .= "<br>".$sanitized['message1'];
+$mes .= "<br>".$sanitized['message2'];
+$mes .= "<br>".$sanitized['message3'];
+$mes .= "<br>".$sanitized['message4'];
+$mes .= "<br>".$sanitized['message5'];
 
 try {
 $query = $conn->prepare("INSERT INTO `TASK` (`round`, `subject`, `message`, `sender`, `receiver`, `status`, history ) VALUES ('".$SIMULATION_ROUND."','".$sub."','".$mes."', '".$sender."', '".$receiver."', 'new', 'created at simulationtime ".$SIMULATION_TIME."');");

@@ -62,6 +62,7 @@ CERT_DIR=/etc/letsencrypt/live/bpmspace.net/;
 cd $SCRIPT_DIR;
 unset  Number_Pizza_Team;
 unset  Port_Pizza_Team_web;
+unset  Port_Pizza_Team_ssh;
 unset  Port_Pizza_Team_ServiceDesk;
 unset  Port_Pizza_Team_Kitchen;
 unset  Port_Pizza_Team_Driver;
@@ -107,6 +108,8 @@ export Project_Name_Pizza_Team=RPPS_${i};
 export Port_Pizza_Team_web=6${i}40;
 export Port_Pizza_Team_PHPADMIN=6${i}41;
 export Port_Pizza_Team_DB=6${i}33;
+export Port_Pizza_Team_ssh=6${i}22;
+
 
 echo "Teams#: " $Project_Name_Pizza_Team;
 case $2 in

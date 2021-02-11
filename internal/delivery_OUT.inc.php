@@ -7,9 +7,32 @@
         <input type="radio" name="receiver" value="service">&nbsp;&nbsp;&nbsp;Service&nbsp;&nbsp;&nbsp;
         <input class="form-control" type="text" id="subject" name="subject" placeholder="Subject" required >
 		<div class="md-form">
-		<input class="form-control" type="text" id="message" name="message" placeholder="Message" rows="5" required >
-        <label for="message">&nbsp;&nbsp;OrderNumber - Customer - Order - Street -  Temperature - Humidity</label>
+		<input class="form-control" type="hidden" id="subject1" name="subject1" placeholder="">
+		<!-- <label for="subject1"></label> -->
 		</div>
+		<div class="md-form">
+		<input class="form-control" type="hidden" id="subject2" name="subject2" placeholder="">
+		<!-- <label for="subject2"></label> -->
+		</div>
+		<div class="md-form">
+        <label for="message">&nbsp;&nbsp;OrderNumber - Customer - Order - Street -  Temperature - Humidity</label>
+		<input class="form-control" type="text" id="message" name="message" placeholder="Message" rows="5" required >
+		</div>
+		<div class="md-form">
+		<input class="form-control" type="hidden" id="message1" name="message1" placeholder="" >
+        <!-- <label for="message1"></label> -->
+		</div>
+		<div class="md-form">
+		<input class="form-control" type="hidden" id="message2" name="message2" placeholder="" >
+        <!-- <label for="message2"></label>-->
+		</div>
+		<div class="md-form">
+		<input class="form-control" type="hidden" id="message3" name="message3" placeholder="" >
+        <!-- <label for="message3"></label>-->
+		</div>
+		<div class="md-form">
+		<input class="form-control" type="hidden" id="message4" name="message4" placeholder="" >
+        <!-- <label for="message4"></label> -->
   </div>
   <input type="submit" value="Submit">
 </form> 

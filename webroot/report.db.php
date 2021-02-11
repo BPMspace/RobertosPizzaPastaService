@@ -132,9 +132,6 @@ INSERT IGNORE INTO `ORDER_TEMPLATE` (`ORDER_TEMP_ID`, `customer`, `adress`, `ord
 (619, 'Dino', 'via Marmorata/via Roma ', '2 x Pizza Funghi & Pizza Grandiosa aber vegetarisch !! (nicht vegan) ',0, 0, '0.00', 0),
 (620, 'Gino', 'Piazza Dante/via Bella Elena ', '2 x Pizza Tonno with extra Garlic ',0, 0, '0.00', 0);
 
-CREATE VIEW IF NOT EXISTS  PizzaReportSimple AS select `RPPS`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`RPPS`.`ORDER`.`round` AS `round`,`RPPS`.`ORDER`.`timestamp_in` AS `timestamp_in`,`RPPS`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) > 5 AS `AddWine` from `RPPS`.`ORDER`;
-
-CREATE VIEW IF NOT EXISTS PizzaReportDetail AS select `RPPS`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`RPPS`.`ORDER`.`round` AS `round`,`RPPS`.`ORDER`.`timestamp_in` AS `timestamp_in`,`RPPS`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) > 5 AS `AddWine`,`RPPS`.`ORDER_TEMPLATE`.`weight` - `RPPS`.`ORDER`.`weight` AS `DIFFWEIGHT`,`RPPS`.`ORDER_TEMPLATE`.`price` - `RPPS`.`ORDER`.`price` AS `DIFFPRICE`,`RPPS`.`ORDER_TEMPLATE`.`area` - `RPPS`.`ORDER`.`area` AS `DIFFAREA` from (`RPPS`.`ORDER` join `RPPS`.`ORDER_TEMPLATE` on(`RPPS`.`ORDER`.`ORDER_TEMP_ID` = `RPPS`.`ORDER_TEMPLATE`.`ORDER_TEMP_ID`));
   
   
   ");

@@ -44,7 +44,8 @@ IF ($SIM_FINISHED == "FINISHED") {
 				   <div id="order_table"></div>
 			 </div>
 		</div>
-		<div class="col-md-8 top-buffer_60">
+		<div class="col-md-2 top-buffer_60"></div>
+		<div class="col-md-6 top-buffer_60">
 
 				<form id="order_update" class="appointment-form form-horizontal">
 				<div class="form-group">

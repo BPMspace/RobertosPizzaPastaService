@@ -48,6 +48,15 @@ services:
         - PMA_PORT=3306 
         - PMA_USER=root
         - PMA_PASSWORD=${Passwd_Pizza_Team_DB}
+  sftp:
+    image: atmoz/sftp
+    volumes:
+        - './internal/internal_${Number_Pizza_Team}/service_OUT.inc.php:/home/team${Number_Pizza_Team}/service_OUT.inc.php'
+        - './internal/internal_${Number_Pizza_Team}/kitchen_OUT.inc.php:/home/team${Number_Pizza_Team}/kitchen_OUT.inc.php'
+        - './internal/internal_${Number_Pizza_Team}/delivery_OUT.inc.php:/home/team${Number_Pizza_Team}/delivery_OUT.inc.php'
+    ports:
+        - ${Port_Pizza_Team_ssh}:22
+    command: team${Number_Pizza_Team}:PizzaRegina:1001:0
 networks:
         default:
          external:

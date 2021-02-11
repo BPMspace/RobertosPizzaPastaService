@@ -98,6 +98,7 @@ while :; do
 		*)
 		echo $USAGE; exit 1;;
 	esac
+chown -R 1001 $SCRIPT_DIR/internal/internal_*
 tput clear;
 seq 1 10| while read i; do echo -en "\r" ; done;
 echo -en "\\r" $(date +%x_%r)' - Do copy loop to internal with parameter "'$1'" to sub folder - Press <CTRL+C> to exit.'; sleep 1;  done

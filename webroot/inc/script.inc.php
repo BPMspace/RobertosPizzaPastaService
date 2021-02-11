@@ -94,9 +94,9 @@
 
       $('#street').DataTable({
         "paging":   false,
-        "searching": false,
+        "searching": true,
         "info":     false,
-        "ordering": false
+        "ordering": true
         } );
     
      $('#task').DataTable({
