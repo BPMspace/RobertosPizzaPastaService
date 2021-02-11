@@ -9089,6 +9089,8 @@ tr{
 	color: var(--white);
 	
 }
+
+thead th, thead td { text-align: left; }
 /*
 div[class*=col-] {border: 10px solid #FFF;}
 div[class*=col-]:first-child {border: 3px solid #F00;}

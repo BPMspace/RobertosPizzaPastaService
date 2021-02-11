@@ -103,7 +103,14 @@
         "paging":   false,
         "searching": true,
         "info":     false,
-        "ordering": true
+        "ordering": true,
+		"columnDefs": [
+			{ className: "dt-body-left", "targets": [ 0 ] },
+			{ className: "dt-body-left", "targets": [ 1 ] },
+			{ className: "dt-body-left", "targets": [ 2 ] },
+			{ className: "dt-body-left", "targets": [ 3 ] },
+			{ className: "dt-body-left", "targets": [ 4 ] }
+		]
         } );
 		
       $('#order').DataTable({
@@ -161,7 +168,13 @@
    success: function () {
    alert('Task was created!');
    $("#subject").val("");
+   $("#subject1").val("");
+   $("#subject2").val("");
    $("#message").val("");
+   $("#message1").val("");
+   $("#message2").val("");
+   $("#message3").val("");
+   $("#message4").val("");
    }
    });
    

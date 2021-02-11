@@ -28,6 +28,7 @@ echo "<table id=\"task\" class=\"table table-striped table-responsive-md\">
        <th scope=\"col\" title=\"Subject\">Subject</th>
        <th scope=\"col\" title=\"Message\">Message</th>
        <th scope=\"col\" title=\"Time\">Time</th>
+       <th scope=\"col\" title=\"Action\">Action</th>
      </tr>
    </thead>
    <tbody>";
@@ -39,6 +40,8 @@ while ($task = $query_task->fetch(PDO::FETCH_ASSOC))
 				   <td>".$task['subject']."</td>
 				   <td>".$task['message']."</td>
 				   <td>".$task['time']."</td>
+				   <td> <a href=\"\\task_update.php?task_id=".$task['TASK_ID']."\" target=\"_blank\"><i class=\"fa fa-check-square\" aria-hidden=\"true\"></i> </a></td>
+		 
 				</tr>";
 			}
 ?>
