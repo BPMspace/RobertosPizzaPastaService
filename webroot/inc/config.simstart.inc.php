@@ -1,11 +1,11 @@
 <?php 
-   $SIMULATION_ROUND = 0;
+   $SIMULATION_ROUND = 4;
    $SIM_SALT="5a576hhd95";
    
    date_default_timezone_set("Europe/Berlin");
    $DIFF_BETWEEN_ORDERS =35000; // miliseconds > 30 sekunden = 30000
-   $SIMULATION_TIME_START = mktime(18,00,00, 2, 11, 2021);
-   $SIMULATION_TIME_END = $SIMULATION_TIME_START+1000000; //15 MIN = 900 seconds
+   $SIMULATION_TIME_START = mktime(16,50,00, 2, 16, 2021);
+   $SIMULATION_TIME_END = $SIMULATION_TIME_START+900; //15 MIN = 900 seconds
    $SIM_STARTED = ($SIMULATION_TIME_START < strtotime('now')) ? "STARTED" : "NOT STARTED";
    $SIM_FINISHED = ($SIMULATION_TIME_END < strtotime('now'))
    ? "FINISHED" : "NOT FINISHED";
