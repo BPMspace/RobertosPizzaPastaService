@@ -22,21 +22,6 @@ services:
         environment:
         - PMA_HOST=RPPS_mariadb10
         - PMA_PORT=3306 
-  RPPS_RobertoWeb_01:
-       image: bpmspace/rpps-7_4_apache-php
-       ports:
-            - 6101:80
-       volumes:
-         - './webroot/:/var/www/html/'
-         - './internal/internal_01/:/var/www/html/internal'
-       environment:
-        - Number_Pizza_Team=01
-        - Passwd_Pizza_Team_DB=RPPS1122
-        - Port_Pizza_Team_DB=3306
-        - Port_Pizza_Team_PHPADMIN=6200}
-        - Port_Pizza_Team_web=6101
-       links:
-        -  RPPS_mariadb10
 networks:
         default:
          external:

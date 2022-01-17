@@ -88,17 +88,17 @@ if [ $# -eq 0 ]
 esac
 fi
 
-export Passwd_Pizza_Team_DB="RPPS!11";
+export Passwd_Pizza_Team_DB="RPPS1122";
 #export Port_Pizza_Team_DB=6033;
 #export Port_Pizza_Team_PHPADMIN=6080;
 #docker network create SIM_RPPS;
 #docker-compose -f $SCRIPT_DIR/docker-compose.base.yml up -d
 
-sudo cp $CERT_DIR/cert.pem $SCRIPT_DIR/dockerconf/apache2/certbot.pem
-sudo cp $CERT_DIR/privkey.pem $SCRIPT_DIR/dockerconf/apache2/certbot_priv.pem
+#sudo cp $CERT_DIR/cert.pem $SCRIPT_DIR/dockerconf/apache2/certbot.pem
+#sudo cp $CERT_DIR/privkey.pem $SCRIPT_DIR/dockerconf/apache2/certbot_priv.pem
 
 cd $SCRIPT_DIR/Dockerfile
-docker build -t bpmspace/rpps-apache-php:latest -f $SCRIPT_DIR//Dockerfile/Dockerfile.apache_php .
+docker build -t bpmspace/rpps-apache-php:latest -f $SCRIPT_DIR/Dockerfile/Dockerfile.apache_php .
 cd $SCRIPT_DIR
 
 for i in $(seq 1 $END); do 

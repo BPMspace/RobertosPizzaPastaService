@@ -1,0 +1,16 @@
+FROM php:7.4-apache
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils
+
+RUN apt-get update
+RUN apt-get install -y libzip-dev
+RUN docker-php-ext-install zip
+  
+RUN apt-get install -y libpng-dev 
+RUN docker-php-ext-configure gd
+RUN cd /usr/src/php/ext/gd && make
+RUN docker-php-ext-install -j$(nproc) gd
+ 
+RUN docker-php-ext-install pdo pdo_mysql
+
+# enbale rewrite 
+RUN a2enmod rewrite
