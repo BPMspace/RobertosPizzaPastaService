@@ -2,7 +2,9 @@
 $servername = "RPPS_mariadb10";
 $username = "root";
 $dbpassword = getenv('Passwd_Pizza_Team_DB');
-$dbname = "RPPS";
+$Number_Pizza_Team = getenv('Number_Pizza_Team');
+$Number_Pizza_Team = str_pad($Number_Pizza_Team, 4, '0', STR_PAD_LEFT);
+$dbname = "RPPS".$Number_Pizza_Team;
 $sanitized = array_map('strtolower', $_POST);
 $sanitized = str_replace(';', 'CHAR NOT ALLOWED', $sanitized);
 $sanitized = str_replace('<', 'CHAR NOT ALLOWED', $sanitized);
@@ -30,9 +32,9 @@ if ($conn->connect_error) {
 
 try {
 $query = $conn->prepare("
-CREATE DATABASE IF NOT EXISTS RPPS;
-USE RPPS;
-CREATE TABLE IF NOT EXISTS `RPPS`.`TASK` ( 
+CREATE DATABASE IF NOT EXISTS ".$dbname.";
+USE ".$dbname.";
+CREATE TABLE IF NOT EXISTS `".$dbname."`.`TASK` ( 
   `TASK_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `round` INT NOT NULL ,
   `subject` VARCHAR(255) NOT NULL ,
@@ -43,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `RPPS`.`TASK` (
   `timestamp` TIMESTAMP  NOT NULL DEFAULT NOW() ,
   `history` TEXT NOT NULL, PRIMARY KEY (`TASK_ID`)) ENGINE = InnoDB AUTO_INCREMENT=9365463;
 
-CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER_TEMPLATE` (
+CREATE TABLE IF NOT EXISTS `".$dbname."`.`ORDER_TEMPLATE` (
   `ORDER_TEMP_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `customer` VARCHAR(255) NOT NULL ,
   `adress` TEXT NOT NULL ,
@@ -54,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER_TEMPLATE` (
   `weight` INT NOT NULL ,
   PRIMARY KEY (`ORDER_TEMP_ID`)) ENGINE = InnoDB AUTO_INCREMENT=601;
   
-CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER` (
+CREATE TABLE IF NOT EXISTS `".$dbname."`.`ORDER` (
   `ORDER_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `ORDER_TEMP_ID` INT UNSIGNED NOT NULL,
   `round` INT,
@@ -66,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `RPPS`.`ORDER` (
   `weight` INT ,
   PRIMARY KEY (`ORDER_ID`)) ENGINE = InnoDB AUTO_INCREMENT=2653;
   
-CREATE TABLE IF NOT EXISTS `RPPS`.`MENU` (
+CREATE TABLE IF NOT EXISTS `".$dbname."`.`MENU` (
 `MENU_ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
  `type` ENUM('Pizza','Pasta','Basic','Extra') NOT NULL ,
  `name` VARCHAR(255) NOT NULL ,
@@ -132,9 +134,9 @@ INSERT IGNORE INTO `ORDER_TEMPLATE` (`ORDER_TEMP_ID`, `customer`, `adress`, `ord
 (619, 'Dino', 'via Marmorata/via Roma ', '2 x Pizza Funghi & Pizza Grandiosa aber vegetarisch !! (nicht vegan) ',0, 0, '0.00', 0),
 (620, 'Gino', 'Piazza Dante/via Bella Elena ', '2 x Pizza Tonno with extra Garlic ',0, 0, '0.00', 0);
 
-CREATE VIEW IF NOT EXISTS  PizzaReportSimple AS select `RPPS`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`RPPS`.`ORDER`.`round` AS `round`,`RPPS`.`ORDER`.`timestamp_in` AS `timestamp_in`,`RPPS`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) > 5 AS `AddWine` from `RPPS`.`ORDER`;
+CREATE VIEW IF NOT EXISTS  PizzaReportSimple AS select `".$dbname."`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`".$dbname."`.`ORDER`.`round` AS `round`,`".$dbname."`.`ORDER`.`timestamp_in` AS `timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`".$dbname."`.`ORDER`.`timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`".$dbname."`.`ORDER`.`timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out`) > 5 AS `AddWine` from `".$dbname."`.`ORDER`;
 
-CREATE VIEW IF NOT EXISTS PizzaReportDetail AS select `RPPS`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`RPPS`.`ORDER`.`round` AS `round`,`RPPS`.`ORDER`.`timestamp_in` AS `timestamp_in`,`RPPS`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`RPPS`.`ORDER`.`timestamp_in`,`RPPS`.`ORDER`.`timestamp_out`) > 5 AS `AddWine`,`RPPS`.`ORDER_TEMPLATE`.`weight` - `RPPS`.`ORDER`.`weight` AS `DIFFWEIGHT`,`RPPS`.`ORDER_TEMPLATE`.`price` - `RPPS`.`ORDER`.`price` AS `DIFFPRICE`,`RPPS`.`ORDER_TEMPLATE`.`area` - `RPPS`.`ORDER`.`area` AS `DIFFAREA` from (`RPPS`.`ORDER` join `RPPS`.`ORDER_TEMPLATE` on(`RPPS`.`ORDER`.`ORDER_TEMP_ID` = `RPPS`.`ORDER_TEMPLATE`.`ORDER_TEMP_ID`));
+CREATE VIEW IF NOT EXISTS PizzaReportDetail AS select `".$dbname."`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`".$dbname."`.`ORDER`.`round` AS `round`,`".$dbname."`.`ORDER`.`timestamp_in` AS `timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`".$dbname."`.`ORDER`.`timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`".$dbname."`.`ORDER`.`timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out`) > 5 AS `AddWine`,`".$dbname."`.`ORDER_TEMPLATE`.`weight` - `".$dbname."`.`ORDER`.`weight` AS `DIFFWEIGHT`,`".$dbname."`.`ORDER_TEMPLATE`.`price` - `".$dbname."`.`ORDER`.`price` AS `DIFFPRICE`,`".$dbname."`.`ORDER_TEMPLATE`.`area` - `".$dbname."`.`ORDER`.`area` AS `DIFFAREA` from (`".$dbname."`.`ORDER` join `".$dbname."`.`ORDER_TEMPLATE` on(`".$dbname."`.`ORDER`.`ORDER_TEMP_ID` = `".$dbname."`.`ORDER_TEMPLATE`.`ORDER_TEMP_ID`));
   
   
   ");

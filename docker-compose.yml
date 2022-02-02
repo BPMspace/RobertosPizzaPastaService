@@ -1,43 +1,424 @@
 version: '3'
 services:
   RPPS_mariadb10:
-        image: mariadb:latest
-        command: [mysqld, --default-authentication-plugin=mysql_native_password, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
-        volumes:
-        - ./mariadb10/:/var/lib/mysql
-        environment:
-        - MYSQL_ROOT_PASSWORD=RPPS1122
-        - MYSQL_DATABASE=RPPS
-        - MYSQL_USER=RPPS
-        - MYSQL_PASSWORD=RPPS1122
-        - TZ=Europe/Berlin
-        working_dir: /root/import
+    image: 'mariadb:latest'
+    command:
+      - mysqld
+      - '--default-authentication-plugin=mysql_native_password'
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
+    volumes:
+      - './mariadb10/:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=RPPS1122
+      - MYSQL_DATABASE=RPPS
+      - MYSQL_USER=RPPS
+      - MYSQL_PASSWORD=RPPS1122
+      - TZ=Europe/Berlin
+    working_dir: /root/import
   RPPS_phpmyadmin-mariadb:
-        image: phpmyadmin/phpmyadmin:latest
-        ports:
-        - 6200:80
-        depends_on:
-        - RPPS_mariadb10
-        working_dir: /etc/phpmyadmin/
-        environment:
-        - PMA_HOST=RPPS_mariadb10
-        - PMA_PORT=3306 
+    image: 'phpmyadmin/phpmyadmin:latest'
+    ports:
+      - '6200:80'
+    depends_on:
+      - RPPS_mariadb10
+    working_dir: /etc/phpmyadmin/
+    environment:
+      - PMA_HOST=RPPS_mariadb10
+      - PMA_PORT=3306
+  RPPS_RobertoWeb_DASHBOARD:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6100:80'
+    volumes:
+      - './webroot_dashboard/:/var/www/html/'
+    environment:
+      - PHP_CRUD_API_DRIVER=mysql
+      - PHP_CRUD_API_ADDRESS=RPPS_mariadb10
+      - PHP_CRUD_API_PORT=3306
+      - PHP_CRUD_API_DATABASE=RPPS0001
+      - PHP_CRUD_API_USERNAME=root
+      - PHP_CRUD_API_PASSWORD=RPPS1122
+      - PHP_CRUD_API_DEBUG=1
+    links:
+      - RPPS_mariadb10
   RPPS_RobertoWeb_01:
-       image: bpmspace/rpps-7_4_apache-php
-       ports:
-            - 6101:80
-       volumes:
-         - './webroot/:/var/www/html/'
-         - './internal/internal_01/:/var/www/html/internal'
-       environment:
-        - Number_Pizza_Team=01
-        - Passwd_Pizza_Team_DB=RPPS1122
-        - Port_Pizza_Team_DB=3306
-        - Port_Pizza_Team_PHPADMIN=6200}
-        - Port_Pizza_Team_web=6101
-       links:
-        -  RPPS_mariadb10
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6101:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_01/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=01
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3306
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6101
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_02:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6102:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_02/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=02
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3306
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6102
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_03:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6103:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_03/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=03
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3306
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6103
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_04:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6104:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_04/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=04
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3306
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6104
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_05:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6105:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_05/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=05
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3306
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6105
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_06:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6106:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_06/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=06
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3306
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6106
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_07:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6107:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_07/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=07
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3307
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6107
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_08:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6108:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_08/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=08
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3308
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6108
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_09:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6109:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_09/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=09
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3309
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6109
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_10:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6110:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_10/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=10
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3310
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6110
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_11:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6111:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_11/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=11
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3311
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6111
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_12:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6112:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_12/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=12
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3312
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6112
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_13:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6113:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_13/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=13
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3313
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6113
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_14:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6114:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_14/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=14
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3314
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6114
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_15:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6115:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_15/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=15
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3315
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6115
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_16:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6116:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_16/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=16
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3316
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6116
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_17:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6117:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_17/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=17
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3317
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6117
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_18:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6118:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_18/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=18
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3318
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6118
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_19:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6119:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_19/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=19
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3319
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6119
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_20:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6120:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_20/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=20
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3320
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6120
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_21:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6121:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_21/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=21
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3321
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6121
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_22:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6122:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_22/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=22
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3322
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6122
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_23:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6123:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_23/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=23
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3323
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6123
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_24:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6124:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_24/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=24
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3324
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6124
+    links:
+      - RPPS_mariadb10
+  RPPS_RobertoWeb_25:
+    image: bpmspace/rpps-7_4_apache-php
+    ports:
+      - '6125:80'
+    volumes:
+      - './webroot/:/var/www/html/'
+      - './internal/internal_25/:/var/www/html/internal'
+    environment:
+      - Number_Pizza_Team=25
+      - Passwd_Pizza_Team_DB=RPPS1122
+      - Port_Pizza_Team_DB=3325
+      - Port_Pizza_Team_PHPADMIN=6200
+      - Port_Pizza_Team_web=6125
+    links:
+      - RPPS_mariadb10
 networks:
-        default:
-         external:
-           name: SIM_RPPS
+  default:
+    external:
+      name: proxy
+      
