@@ -1,0 +1,43 @@
+version: '3.5'
+services:
+   swag:
+     image: ghcr.io/linuxserver/swag
+     container_name: swag
+     cap_add:
+       - NET_ADMIN
+     environment:
+       - PUID=1000
+       - PGID=1000
+       - TZ=Europe/London
+       - URL=pizza.pub.lab.nm.ifi.lmu.de
+       - SUBDOMAINS=team01,team02,team03,team04,team05
+       - VALIDATION=http #or dns if using wildcard
+       #- CERTPROVIDER= #optional
+       #- DNSPLUGIN=cloudflare #optional
+       #- PROPAGATION= #optional
+       #- DUCKDNSTOKEN= #optional
+       #- EMAIL= #optional
+       #- ONLY_SUBDOMAINS=true #optional
+       #- EXTRA_DOMAINS= #optional
+       #- STAGING=false #optional
+       #- MAXMINDDB_LICENSE_KEY= #optional
+     volumes:
+       - ./swag_config:/config
+     ports:
+       - 443:443
+       - 80:80 #optional
+     networks:
+       - web
+     restart: always
+   web-test:
+     image: crccheck/hello-world
+     container_name: web-test
+     ports:
+       - 81:8000
+     networks:
+       - web
+#we are using a defined external network so we can share with other containers and compositions
+networks:
+  web:
+    external: true
+    name: proxy

@@ -9,6 +9,7 @@ services:
       - '--collation-server=utf8mb4_unicode_ci'
     volumes:
       - './mariadb10/:/var/lib/mysql'
+      - './sql/01_init.sql:/docker-entrypoint-initdb.d/01_init.sql'
     environment:
       - MYSQL_ROOT_PASSWORD=RPPS1122
       - MYSQL_DATABASE=RPPS
