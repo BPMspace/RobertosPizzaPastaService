@@ -9099,3 +9099,27 @@ div[class*=col-]:nth-child(2) {border: 3px solid #0F0;}
 thead input {
         width: 100%;
     }
+
+.dataTables_length {
+  color: white !important;
+}
+
+div.dataTables_length select {
+  color: white !important;
+}
+
+.dataTables_filter {
+  color: white !important;
+}
+
+.dataTables_filter input {
+  color: white !important;
+}
+
+.dataTables_paginate {
+  color: white !important;
+}
+
+.dataTables_info {
+  color: white !important;
+}
