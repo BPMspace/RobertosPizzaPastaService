@@ -10,7 +10,7 @@ services:
        - PGID=1000
        - TZ=Europe/London
        - URL=pizza.pub.lab.nm.ifi.lmu.de
-       - SUBDOMAINS=team01,team02,team03,team04,team05
+       - SUBDOMAINS=dashboard,dbadmin,team01,team02,team03,team04,team05,team06,team07,team08,team09,team10,team11,team12,team13,team14,team15,team16,team17,team18,team19,team20,team21,team22,team23,team24,team25
        - VALIDATION=http #or dns if using wildcard
        #- CERTPROVIDER= #optional
        #- DNSPLUGIN=cloudflare #optional

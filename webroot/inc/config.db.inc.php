@@ -103,7 +103,7 @@ INSERT IGNORE INTO `MENU` (`MENU_ID`, `type`, `name`, `ingredients`, `price`, `w
 (6751, 'Extra', 'Cooked Ham', '', '2.20', 45, '/images/schinken.jpg'),
 (6752, 'Extra', 'Salami', '', '2.10', 55, '/images/salami.jpg'),
 (6753, 'Extra', 'Mushrooms', '', '1.40', 65, '/images/champignons.jpg'),
-(6754, 'Extra', 'Peppers ', '', '1.60', 25, '/images/paprika.jpg'),
+(6754, 'Extra', 'Peppers', '', '1.60', 25, '/images/paprika.jpg'),
 (6755, 'Extra', 'Hot Peppers', '', '1.50', 10, '/images/peperoni.jpg'),
 (6756, 'Extra', 'Artichokes', '', '1.90', 30, '/images/artischocken.jpg'),
 (6757, 'Extra', 'Onions', '', '1.10', 27, '/images/zwiebel.jpg'),
@@ -138,7 +138,58 @@ CREATE VIEW IF NOT EXISTS  PizzaReportSimple AS select `".$dbname."`.`ORDER`.`OR
 
 CREATE VIEW IF NOT EXISTS PizzaReportDetail AS select `".$dbname."`.`ORDER`.`ORDER_ID` AS `ORDER_ID`,`".$dbname."`.`ORDER`.`round` AS `round`,`".$dbname."`.`ORDER`.`timestamp_in` AS `timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out` AS `timestamp_out`,timestampdiff(MINUTE,`".$dbname."`.`ORDER`.`timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out`) AS `DeliveryTime`,timestampdiff(MINUTE,`".$dbname."`.`ORDER`.`timestamp_in`,`".$dbname."`.`ORDER`.`timestamp_out`) > 5 AS `AddWine`,`".$dbname."`.`ORDER_TEMPLATE`.`weight` - `".$dbname."`.`ORDER`.`weight` AS `DIFFWEIGHT`,`".$dbname."`.`ORDER_TEMPLATE`.`price` - `".$dbname."`.`ORDER`.`price` AS `DIFFPRICE`,`".$dbname."`.`ORDER_TEMPLATE`.`area` - `".$dbname."`.`ORDER`.`area` AS `DIFFAREA` from (`".$dbname."`.`ORDER` join `".$dbname."`.`ORDER_TEMPLATE` on(`".$dbname."`.`ORDER`.`ORDER_TEMP_ID` = `".$dbname."`.`ORDER_TEMPLATE`.`ORDER_TEMP_ID`));
   
-  
+CREATE
+VIEW IF NOT EXISTS `ORDER_REPORT_ALL_TEAMS`
+AS SELECT '1' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0001.PizzaReportDetail
+UNION
+SELECT '2' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0002.PizzaReportDetail
+UNION
+SELECT '3' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0003.PizzaReportDetail
+UNION
+SELECT '4' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0004.PizzaReportDetail
+UNION
+SELECT '5' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0005.PizzaReportDetail
+UNION
+SELECT '6' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0006.PizzaReportDetail
+UNION
+SELECT '7' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0007.PizzaReportDetail
+UNION
+SELECT '8' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0008.PizzaReportDetail
+UNION
+SELECT '9' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0009.PizzaReportDetail
+UNION
+SELECT '10' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0010.PizzaReportDetail
+UNION
+SELECT '11' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0011.PizzaReportDetail
+UNION
+SELECT '12' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0012.PizzaReportDetail
+UNION
+SELECT '13' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0013.PizzaReportDetail
+UNION
+SELECT '14' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0014.PizzaReportDetail
+UNION
+SELECT '15' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0015.PizzaReportDetail
+UNION
+SELECT '16' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0016.PizzaReportDetail
+UNION
+SELECT '17' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0017.PizzaReportDetail
+UNION
+SELECT '18' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0018.PizzaReportDetail
+UNION
+SELECT '19' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0019.PizzaReportDetail
+UNION
+SELECT '20' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0020.PizzaReportDetail
+UNION
+SELECT '21' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0021.PizzaReportDetail
+UNION
+SELECT '22' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0022.PizzaReportDetail
+UNION
+SELECT '23' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0023.PizzaReportDetail
+UNION
+SELECT '24' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0024.PizzaReportDetail
+UNION
+SELECT '25' AS TEAM, `round`, `timestamp_in`, `timestamp_out`, `DeliveryTime`, `AddWine`, `DIFFWEIGHT`, `DIFFPRICE`, `DIFFAREA` FROM  RPPS0025.PizzaReportDetail;
+
   ");
 $query->execute();
 }

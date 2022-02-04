@@ -32,7 +32,8 @@ services:
     ports:
       - '6100:80'
     volumes:
-      - './webroot_dashboard/:/var/www/html/'
+      - './webroot_api/:/var/www/html/'
+
     environment:
       - PHP_CRUD_API_DRIVER=mysql
       - PHP_CRUD_API_ADDRESS=RPPS_mariadb10
