@@ -1,4 +1,5 @@
 /mariadb10*
 /internal/internal_*
 /swag_LMU/swag_config/etc/letsencrypt/*
+/swag_LMU/swag_config/log/*
 

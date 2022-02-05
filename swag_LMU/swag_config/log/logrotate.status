@@ -4,6 +4,6 @@ logrotate state -- version 2
 "/config/log/letsencrypt/*.log" 2022-1-16-2:0:0
 "/config/log/nginx/error.log" 2022-1-30-2:0:0
 "/config/log/letsencrypt/letsencrypt.log" 2022-1-30-2:0:0
-"/config/log/fail2ban/fail2ban.log" 2022-1-30-2:0:0
-"/config/log/nginx/unauthorized.log" 2022-2-4-2:0:0
 "/config/log/php/error.log" 2022-1-30-2:0:0
+"/config/log/nginx/unauthorized.log" 2022-2-4-2:0:0
+"/config/log/fail2ban/fail2ban.log" 2022-1-30-2:0:0
