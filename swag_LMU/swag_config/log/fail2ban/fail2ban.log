@@ -644,3 +644,21 @@
 2022-02-03 07:11:20,125 fail2ban.jail           [483]: INFO    Jail 'nginx-unauthorized' started
 2022-02-03 07:31:48,067 fail2ban.filter         [483]: INFO    [nginx-botsearch] Found 192.163.197.220 - 2022-02-03 07:31:47
 2022-02-03 16:42:50,400 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 46.85.201.165 - 2022-02-03 16:42:50
+2022-02-06 03:14:14,367 fail2ban.filter         [483]: INFO    [nginx-botsearch] Found 184.168.116.210 - 2022-02-06 03:14:14
+2022-02-06 04:44:19,043 fail2ban.filter         [483]: INFO    [nginx-botsearch] Found 137.74.93.154 - 2022-02-06 04:44:19
+2022-02-08 07:43:48,053 fail2ban.filter         [483]: INFO    [nginx-botsearch] Found 162.213.255.8 - 2022-02-08 07:43:47
+2022-02-08 13:02:40,702 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 217.249.7.165 - 2022-02-08 13:02:40
+2022-02-08 13:14:17,912 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 87.154.30.88 - 2022-02-08 13:14:17
+2022-02-08 13:15:47,236 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 46.114.89.162 - 2022-02-08 13:15:47
+2022-02-08 13:15:54,448 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 46.114.89.162 - 2022-02-08 13:15:54
+2022-02-08 13:18:08,644 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 217.249.7.165 - 2022-02-08 13:18:08
+2022-02-08 13:18:24,672 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 217.249.7.165 - 2022-02-08 13:18:24
+2022-02-08 13:18:39,293 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 217.249.7.165 - 2022-02-08 13:18:38
+2022-02-08 13:18:55,316 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 217.249.7.165 - 2022-02-08 13:18:55
+2022-02-08 13:18:55,648 fail2ban.actions        [483]: NOTICE  [nginx-unauthorized] Ban 217.249.7.165
+2022-02-08 13:20:45,475 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 129.187.48.201 - 2022-02-08 13:20:44
+2022-02-08 13:22:17,606 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 91.39.66.86 - 2022-02-08 13:22:17
+2022-02-08 13:24:33,801 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 84.144.66.212 - 2022-02-08 13:24:33
+2022-02-08 13:27:32,267 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 87.154.30.88 - 2022-02-08 13:27:32
+2022-02-08 13:28:55,205 fail2ban.actions        [483]: NOTICE  [nginx-unauthorized] Unban 217.249.7.165
+2022-02-08 13:30:49,167 fail2ban.filter         [483]: INFO    [nginx-unauthorized] Found 217.249.7.165 - 2022-02-08 13:30:49

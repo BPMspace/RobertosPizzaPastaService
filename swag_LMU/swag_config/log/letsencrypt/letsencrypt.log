@@ -124,3 +124,57 @@ The following certificates are not due for renewal yet:
 No renewals were attempted.
 No hooks were run.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<------------------------------------------------->
+
+<------------------------------------------------->
+cronjob running on Sun Feb 6 02:08:00 GMT 2022
+Running certbot renew
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/pizza.pub.lab.nm.ifi.lmu.de.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Certificate not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The following certificates are not due for renewal yet:
+  /etc/letsencrypt/live/pizza.pub.lab.nm.ifi.lmu.de/fullchain.pem expires on 2022-05-04 (skipped)
+No renewals were attempted.
+No hooks were run.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<------------------------------------------------->
+
+<------------------------------------------------->
+cronjob running on Mon Feb 7 02:08:00 GMT 2022
+Running certbot renew
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/pizza.pub.lab.nm.ifi.lmu.de.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Certificate not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The following certificates are not due for renewal yet:
+  /etc/letsencrypt/live/pizza.pub.lab.nm.ifi.lmu.de/fullchain.pem expires on 2022-05-04 (skipped)
+No renewals were attempted.
+No hooks were run.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<------------------------------------------------->
+
+<------------------------------------------------->
+cronjob running on Tue Feb 8 02:08:00 GMT 2022
+Running certbot renew
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/pizza.pub.lab.nm.ifi.lmu.de.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Certificate not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The following certificates are not due for renewal yet:
+  /etc/letsencrypt/live/pizza.pub.lab.nm.ifi.lmu.de/fullchain.pem expires on 2022-05-04 (skipped)
+No renewals were attempted.
+No hooks were run.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
